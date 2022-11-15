@@ -1,3 +1,130 @@
-img {
-  display: block;
+@font-face {
+  font-family: "PT Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../assets/fonts/PTSans-Regular.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "PT Sans";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../assets/fonts/PTSans-Italic.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "PT Sans";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../assets/fonts/PTSans-Bold.ttf") format("ttf");
+}
+
+@font-face {
+  font-family: "PT Sans";
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../assets/fonts/PTSans-BoldItalic.ttf") format("ttf");
+}
+
+:root {
+  --cont-w: 40px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "PT Sans";
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container {
+  padding: 25px var(--cont-w);
+  position: relative;
+}
+
+.home {
+  display: flex;
+  align-items: center;
+}
+
+.home-logo {
+  width: 40px;
+}
+
+.home-link {
+  margin-left: 10px;
+  font-size: 28px;
+  text-decoration: none;
+}
+
+.hamburger {
+  font-size: 28px;
+}
+
+.hamburger a {
+  text-decoration: none;
+}
+
+.navbar {
+  margin-left: calc(-1 * var(--cont-w));
+  position: absolute;
+  transform: translate(-100%, 0);
+  width: 100%;
+  background-color: #ffffff;
+  transition: transform 0.35s ease-in-out;
+}
+
+.navbar-open {
+  transform: translate(0, 0);
+}
+
+.navbar-item {
+  list-style: none;
+  text-align: center;
+}
+
+.navbar-item > * {
+  margin: 30px 0;
+}
+
+
+@media screen and (min-width: 768px) {
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .hamburger {
+    display: none;
+  }
+
+  .navbar {
+    margin-left: initial;
+    position: initial;
+    transform: initial;
+    width: initial;
+    background-color: initial;
+    transition: initial;
+  }
+
+  .navbar-item {
+    display: flex;
+    text-align: initial;
+  }
+
+  .navbar-item > * {
+    margin: 0;
+    margin-left: 25px;
+  }
 }
