@@ -169,7 +169,13 @@ section.hero {
 }
 
 .hero-latar h1 {
+  padding: 0 20px;
   font-size: 23px;
+}
+
+.hero-latar p {
+  font-size: 15px;
+  padding: 0 20px;
 }
 
 main {
@@ -178,7 +184,6 @@ main {
 
 section {
   margin: 20px;
-  padding: 20px 20px 0;
 }
 
 section * {
@@ -193,7 +198,12 @@ section * {
 }
 
 .judul-daftar h2 {
+  padding: 0 20px;
   font-size: 21px;
+}
+
+.judul-daftar p {
+  padding: 0 20px;
 }
 
 .cards {
@@ -251,7 +261,7 @@ footer {
   }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 750px) {
   p {
     font-size: 16px;
   }
@@ -303,9 +313,17 @@ footer {
   .hero-latar p {
     font-size: 18px;
   }
+
+  .judul-daftar h2 {
+    font-size: 30px;
+  }
+
+  .judul-daftar p {
+    font-size: 18px;
+  }
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 850px) {
   .cards {
     grid-template-columns: repeat(3, 1fr);
   }
