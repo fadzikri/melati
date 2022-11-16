@@ -1,5 +1,8 @@
-import 'regenerator-runtime'; /* for async await transpile */
 import '../styles/main.css';
+import 'regenerator-runtime'; /* for async await transpile */
+import './card'
+
+console.log("Hello")
 
 const menu = document.getElementById("hamburger");
 const navbar = document.getElementById("drawer");
@@ -19,3 +22,4 @@ main.addEventListener("click", (event) => {
 let year = new Date().getFullYear();
 
 tahun.innerHTML = year;
+
