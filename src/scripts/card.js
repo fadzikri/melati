@@ -1,22 +1,15 @@
-class CardRestr extends HTMLElement {
-    constructor(gambar, rate, nama, kota, desc) {
-        this.gambar = gambar;
-        this.rate = rate;
-        this.nama = nama;
-        this.kota = kota;
-        this.desc = desc;
-    }
+const data = require("../DATA.json");
 
-    connectedCallback() {
-        this.innerHTML = `
-            <img src=${this.gambar} class="card-img" id="card-img">
-            <p class="card-rate" id="card-rate">${this.rate}</p>
-            <p class="card-nama" id="card-nama">${this.nama}</p>
-            <p class="card-kota" id="card-kota">${this.kota}</p>
-            <p class="card-desc" id="card-desc">${this.desc}</p>
-        `;
-    }
-}
+let cards = document.getElementById("cards");
 
-customElements.define('card-restr', CardRestr);
-console.log(__filename);
+data.restaurants.forEach((x) => {
+    cards.innerHTML += `
+        <div class="card">
+            <img src=${x.pictureId} alt="${x.name}">
+            <p>${x.rating}</p>
+            <p>${x.name}</p>
+            <p>${x.city}</p>
+            <p>${x.description}</p>
+        </div>
+    `;
+});
