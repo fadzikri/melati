@@ -45,18 +45,38 @@
 
 a {
   text-decoration: none;
+  color: #eeeeee;
 }
 
 a:hover {
-  color: #cccccc;
+  color: #dddddd;
 }
 
 a:active {
-  color: #aaaaaa;
+  color: #cccccc;
 }
 
 body {
   background-color: #DDDDDD;
+}
+
+h1, h2 {
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 13px;
+}
+
+.skip {
+  color: #28385E;
+  position: absolute;
+  background-color: #DDDDDD;
+  padding: 5px;
+}
+
+.skip:focus {
+  z-index: 1;
 }
 
 header {
@@ -78,13 +98,14 @@ header {
 
 .home-link {
   padding: 10px;
-  font-size: 21px;
+  font-size: 18px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .home-link img{
+  width: 28px;
   margin-right: 15px;
 }
 
@@ -119,16 +140,37 @@ header {
 }
 
 .navbar-item a {
-  font-size: 18px;
+  font-size: 16px;
   padding: 22px 80px;
 }
 
-/* .hero {
+section.hero {
+  margin: 0;
+  padding: 0;
   height: 500px;
   background-image: url(../assets/public/images/heros/hero-image.jpg);
-  background-size: auto;
+  background-size: cover;
   background-position: center;
-} */
+}
+
+.hero-latar {
+  background-color: #161f2c54;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.hero-latar * {
+  color: #eeeeee;
+}
+
+.hero-latar h1 {
+  font-size: 23px;
+}
 
 main {
   min-height: calc(100vh - (75px * 2));
@@ -137,7 +179,6 @@ main {
 section {
   margin: 20px;
   padding: 20px 20px 0;
-  background-color: #d6d6d6;
 }
 
 section * {
@@ -151,6 +192,10 @@ section * {
   margin-bottom: 20px;
 }
 
+.judul-daftar h2 {
+  font-size: 21px;
+}
+
 .cards {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
@@ -160,15 +205,18 @@ section * {
 }
 
 .card {
-  background-color: #bdbdbd;
+  background-color: #eeeeee;
   padding: 15px;
   border-radius: 3.5px;
   margin-bottom: 15px;
 }
 
+.card:last-child {
+  margin-bottom: 0;
+}
+
 .card img {
   border-radius: 3.5px;
-  border: 2px solid #a1a1a1;
   margin-bottom: 10px;
   width: 100%;
   height: 200px;
@@ -190,18 +238,34 @@ footer {
 }
 
 @media screen and (min-width: 600px) {
+  .home-link img{
+    width: 35px;
+  }
+
   .cards {
     grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card:last-child {
+    margin: 0 -50% 0 50%;
   }
 }
 
 @media screen and (min-width: 768px) {
+  p {
+    font-size: 16px;
+  }
+
   .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-left: var(--cont-d);
     padding-right: var(--cont-d);
+  }
+
+  .home-link {
+    font-size: 20px;
   }
   
   .hamburger {
@@ -228,13 +292,25 @@ footer {
   }
 
   .navbar-item a {
-    padding: 10px;
+    padding: 16px;
     margin: 0;
+  }
+
+  .hero-latar h1 {
+    font-size: 40px;
+  }
+
+  .hero-latar p {
+    font-size: 18px;
   }
 }
 
 @media screen and (min-width: 1000px) {
   .cards {
     grid-template-columns: repeat(3, 1fr);
+  }
+
+  .card:nth-last-child(-n+3) {
+    margin: 0;
   }
 }
