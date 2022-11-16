@@ -3,7 +3,7 @@
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url("../assets/fonts/PTSans-Regular.ttf") format("ttf");
+  src: url("../assets/fonts/PTSans-Regular.ttf");
 }
 
 @font-face {
@@ -11,7 +11,7 @@
   font-style: italic;
   font-weight: 400;
   font-display: swap;
-  src: url("../assets/fonts/PTSans-Italic.ttf") format("ttf");
+  src: url("../assets/fonts/PTSans-Italic.ttf");
 }
 
 @font-face {
@@ -19,7 +19,7 @@
   font-style: normal;
   font-weight: 700;
   font-display: swap;
-  src: url("../assets/fonts/PTSans-Bold.ttf") format("ttf");
+  src: url("../assets/fonts/PTSans-Bold.ttf");
 }
 
 @font-face {
@@ -27,7 +27,7 @@
   font-style: italic;
   font-weight: 700;
   font-display: swap;
-  src: url("../assets/fonts/PTSans-BoldItalic.ttf") format("ttf");
+  src: url("../assets/fonts/PTSans-BoldItalic.ttf");
 }
 
 :root {
