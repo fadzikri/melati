@@ -1,35 +1,3 @@
-@font-face {
-  font-family: "PT Sans";
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("../assets/fonts/PTSans-Regular.ttf");
-}
-
-@font-face {
-  font-family: "PT Sans";
-  font-style: italic;
-  font-weight: 400;
-  font-display: swap;
-  src: url("../assets/fonts/PTSans-Italic.ttf");
-}
-
-@font-face {
-  font-family: "PT Sans";
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("../assets/fonts/PTSans-Bold.ttf");
-}
-
-@font-face {
-  font-family: "PT Sans";
-  font-style: italic;
-  font-weight: 700;
-  font-display: swap;
-  src: url("../assets/fonts/PTSans-BoldItalic.ttf");
-}
-
 :root {
   --cont-w: 10px;
   --cont-d: 50px;
@@ -148,7 +116,7 @@ section.hero {
   margin: 0;
   padding: 0;
   height: 500px;
-  background-image: url(../assets/public/images/heros/hero-image.jpg);
+  background-image: url(../public/images/heros/hero-image.jpg);
   background-size: cover;
   background-position: center;
 }

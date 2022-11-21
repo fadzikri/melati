@@ -1,22 +1,13 @@
+/* eslint-disable no-unused-vars */
 import 'regenerator-runtime'
 import '../styles/main.css'
+import { Navbar, Footer } from './views/appshell'
 import './card'
 
-const menu = document.getElementById('hamburger')
-const navbar = document.getElementById('drawer')
-const tahun = document.getElementById('tahun')
-const main = document.querySelector('main')
-
-menu.addEventListener('click', (event) => {
-  navbar.classList.toggle('navbar-open')
-  event.stopPropagation()
+const navbar = new Navbar({
+  button: document.getElementById('hamburger'),
+  drawer: document.getElementById('drawer'),
+  content: document.querySelector('main')
 })
 
-main.addEventListener('click', (event) => {
-  navbar.classList.remove('navbar-open')
-  event.stopPropagation()
-})
-
-const year = new Date().getFullYear()
-
-tahun.innerHTML = year
+const footer = new Footer(document.getElementById('tahun'))
