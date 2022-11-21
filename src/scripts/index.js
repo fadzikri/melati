@@ -1,5 +1,5 @@
-import '../styles/main.css'
 import 'regenerator-runtime'
+import '../styles/main.css'
 import './card'
 
 const menu = document.getElementById('hamburger')
