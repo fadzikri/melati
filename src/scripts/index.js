@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import 'regenerator-runtime'
 import '../styles/main.css'
+import swRegister from './utils/sw'
 import { Navbar, Footer } from './views/appshell'
 import './card'
 
@@ -11,3 +12,7 @@ const navbar = new Navbar({
 })
 
 const footer = new Footer(document.getElementById('tahun'))
+
+window.addEventListener('load', () => {
+  swRegister()
+})
