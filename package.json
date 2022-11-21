@@ -6,7 +6,8 @@
   "scripts": {
     "start-dev": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js",
-    "test": "karma start"
+    "test": "karma start",
+    "eslint": "eslint ./src --fix"
   },
   "keywords": [],
   "author": "fadzikri <fadzikri@disroot.org>",
@@ -17,7 +18,11 @@
     "babel-loader": "^8.2.5",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.1",
-    "eslint": "^8.17.0",
+    "eslint": "^8.28.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.5.1",
+    "eslint-plugin-promise": "^6.1.1",
     "html-webpack-plugin": "^5.5.0",
     "jasmine-ajax": "^4.0.0",
     "jasmine-core": "^4.2.0",
