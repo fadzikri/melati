@@ -5,9 +5,8 @@ class RestaurantCard extends HTMLElement {
   }
 }
 
-class RestaurantImage extends HTMLElement {
+class RestaurantImage {
   constructor({ src }) {
-    super();
     this._src = src;
 
     this._renderWithImage();
@@ -20,9 +19,8 @@ class RestaurantImage extends HTMLElement {
   }
 }
 
-class RestaurantDescription extends HTMLElement {
+class RestaurantDescription {
   constructor({ name, rate, city }) {
-    super();
     this._name = name;
     this._rate = rate;
     this._city = city;
@@ -40,7 +38,5 @@ class RestaurantDescription extends HTMLElement {
 }
 
 customElements.define("restaurant-card", RestaurantCard);
-customElements.define("restaurant-image", RestaurantImage);
-customElements.define("restaurant-description", RestaurantDescription);
 
 export { RestaurantCard, RestaurantImage, RestaurantDescription };
