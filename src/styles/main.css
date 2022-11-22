@@ -201,13 +201,6 @@ section * {
   object-fit: cover;
 }
 
-.skeleton-image {
-  height: 200px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .card restaurant-text {
   margin-bottom: 5px;
 }
