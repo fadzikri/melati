@@ -6,6 +6,8 @@ const lists = {
     const datas = await ListDatas.datas();
     const container = content;
 
+    container.innerHTML = "";
+
     datas.forEach((data) => {
       container.append(createCard(data));
     });
