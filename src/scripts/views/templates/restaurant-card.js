@@ -8,9 +8,9 @@ class RestaurantCard extends HTMLElement {
 class RestaurantImage extends HTMLElement {
   constructor({ src }) {
     super();
-    this._src = src || null;
+    this._src = src;
 
-    this._src ? this._renderWithImage() : this._renderWithNoImage();
+    this._renderWithImage();
   }
 
   _renderWithImage() {
@@ -23,13 +23,11 @@ class RestaurantImage extends HTMLElement {
 class RestaurantDescription extends HTMLElement {
   constructor({ name, rate, city }) {
     super();
-    this._name = name || null;
-    this._rate = rate || null;
-    this._city = city || null;
+    this._name = name;
+    this._rate = rate;
+    this._city = city;
 
-    this._name
-      ? this._renderWithDescription()
-      : this._renderWithNoDescription();
+    this._renderWithDescription();
   }
 
   _renderWithDescription() {
