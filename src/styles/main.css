@@ -32,7 +32,7 @@ h1, h2 {
   margin-bottom: 10px;
 }
 
-p {
+p, restaurant-text {
   font-size: 13px;
 }
 
@@ -208,11 +208,11 @@ section * {
   align-items: center;
 }
 
-.card p {
+.card restaurant-text {
   margin-bottom: 5px;
 }
 
-.card p:last-child {
+.card restaurant-text:last-child {
   margin-bottom: 0;
 }
 
@@ -237,7 +237,7 @@ footer {
 }
 
 @media screen and (min-width: 750px) {
-  p {
+  p, restaurant-text {
     font-size: 16px;
   }
 

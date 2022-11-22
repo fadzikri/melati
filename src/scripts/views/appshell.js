@@ -1,13 +1,12 @@
 import drawer from "../utils/drawer";
+import lists from "../utils/lists";
 import year from "../utils/year";
-import "../utils/card";
 
 class Navbar {
   constructor({ button, drawer, content }) {
     this._button = button;
     this._drawer = drawer;
     this._content = content;
-
     this._initialDrawer();
   }
 
@@ -17,6 +16,17 @@ class Navbar {
       drawer: this._drawer,
       content: this._content,
     });
+  }
+}
+
+class Cards {
+  constructor(content) {
+    this._content = content;
+    this._createCards();
+  }
+
+  async _createCards() {
+    await lists.render(this._content);
   }
 }
 
@@ -31,4 +41,4 @@ class Footer {
   }
 }
 
-export { Navbar, Footer };
+export { Navbar, Cards, Footer };

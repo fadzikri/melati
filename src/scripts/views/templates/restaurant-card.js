@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-expressions */
 class RestaurantCard extends HTMLElement {
   connectedCallback() {
     this.setAttribute("tabindex", "0");
@@ -7,7 +6,7 @@ class RestaurantCard extends HTMLElement {
 }
 
 class RestaurantImage extends HTMLElement {
-  constructor(src) {
+  constructor({ src }) {
     super();
     this._src = src || null;
 
@@ -17,14 +16,6 @@ class RestaurantImage extends HTMLElement {
   _renderWithImage() {
     this.innerHTML = `
         <img src="${this._src}" width="100%">
-    `;
-  }
-
-  _renderWithNoImage() {
-    this.innerHTML = `
-      <div class="skeleton-image">
-        <restaurant-text>Memuat...<restaurant-text>
-      </div>
     `;
   }
 }
@@ -43,26 +34,15 @@ class RestaurantDescription extends HTMLElement {
 
   _renderWithDescription() {
     this.innerHTML = `
-        <restaurant-text>Nama : ${this._name}<restaurant-text>
-        <restaurant-text>Rating : ${this._rate} / 5.0<restaurant-text>
-        <restaurant-text>Lokasi : ${this._city}<restaurant-text>
-    `;
-  }
-
-  _renderWithNoDescription() {
-    this.innerHTML = `
-        <restaurant-text>Nama : Memuat...<restaurant-text>
-        <restaurant-text>Rating : Memuat... / 5.0<restaurant-text>
-        <restaurant-text>Lokasi : Memuat...<restaurant-text>
+        <p>Nama : ${this._name}</p>
+        <p>Rating : ${this._rate} / 5.0</p>
+        <p>Lokasi : ${this._city}</p>
     `;
   }
 }
 
-class RestaurantText extends HTMLElement {}
-
 customElements.define("restaurant-card", RestaurantCard);
 customElements.define("restaurant-image", RestaurantImage);
 customElements.define("restaurant-description", RestaurantDescription);
-customElements.define("restaurant-text", RestaurantText);
 
 export { RestaurantCard, RestaurantImage, RestaurantDescription };
