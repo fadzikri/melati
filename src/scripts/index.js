@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-vars */
 import "regenerator-runtime";
 import "../styles/main.css";
-import swRegister from "./utils/sw";
-import { Navbar, Cards, Footer } from "./views/appshell";
+// import swRegister from "./utils/sw";
+import { Navbar, Content, Footer } from "./views/appshell";
 
 const navbar = new Navbar({
   button: document.getElementById("hamburger"),
@@ -10,10 +10,10 @@ const navbar = new Navbar({
   content: document.querySelector("main"),
 });
 
-const cards = new Cards(document.getElementById("cards"));
+const content = new Content(document.getElementById("content"));
 
 const footer = new Footer(document.getElementById("tahun"));
 
 window.addEventListener("load", () => {
-  swRegister();
+  // swRegister();
 });

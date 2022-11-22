@@ -174,7 +174,7 @@ section * {
   padding: 0 20px;
 }
 
-.cards {
+.content {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   gap: 0 15px;
@@ -229,7 +229,7 @@ footer {
     width: 35px;
   }
 
-  .cards {
+  .content {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -301,7 +301,7 @@ footer {
 }
 
 @media screen and (min-width: 850px) {
-  .cards {
+  .content {
     grid-template-columns: repeat(3, 1fr);
   }
 }

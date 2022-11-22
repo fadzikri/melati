@@ -1,5 +1,5 @@
 import ListDatas from "../data/list-datas";
-import createCard from "../views/pages/home-card";
+import card from "../views/pages/card";
 
 const lists = {
   async render(content) {
@@ -8,8 +8,8 @@ const lists = {
 
     container.innerHTML = "";
 
-    datas.forEach((data) => {
-      container.append(createCard(data));
+    datas.forEach(async (data) => {
+      container.append(await card.render(data));
     });
   },
 };

@@ -19,13 +19,13 @@ class Navbar {
   }
 }
 
-class Cards {
+class Content {
   constructor(content) {
     this._content = content;
-    this._createCards();
+    this._renderContent();
   }
 
-  async _createCards() {
+  async _renderContent() {
     await lists.render(this._content);
   }
 }
@@ -41,4 +41,4 @@ class Footer {
   }
 }
 
-export { Navbar, Cards, Footer };
+export { Navbar, Content, Footer };
