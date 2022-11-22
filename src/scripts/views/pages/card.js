@@ -3,7 +3,7 @@ import {
   RestaurantCard,
   RestaurantDescription,
   RestaurantImage,
-} from "../templates/restaurant-card";
+} from "../templates/content-restaurant";
 
 const card = {
   async render(data) {
