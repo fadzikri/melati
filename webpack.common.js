@@ -1,17 +1,17 @@
-const path = require('path')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const CopyWebpackPlugin = require('copy-webpack-plugin')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const WorkboxWebpackPlugin = require('workbox-webpack-plugin')
+const path = require("path");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const WorkboxWebpackPlugin = require("workbox-webpack-plugin");
 
 module.exports = {
   entry: {
-    app: path.resolve(__dirname, 'src/scripts/index.js')
+    app: path.resolve(__dirname, "src/scripts/index.js"),
   },
   output: {
-    filename: '[name].bundle.js',
-    path: path.resolve(__dirname, 'dist'),
-    clean: true
+    filename: "[name].bundle.js",
+    path: path.resolve(__dirname, "dist"),
+    clean: true,
   },
   module: {
     rules: [
@@ -20,34 +20,34 @@ module.exports = {
         use: [
           MiniCssExtractPlugin.loader,
           {
-            loader: 'css-loader'
-          }
-        ]
+            loader: "css-loader",
+          },
+        ],
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: 'asset/resource'
-      }
-    ]
+        type: "asset/resource",
+      },
+    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
-      filename: 'index.html',
-      favicon: 'src/public/images/favicon/favicon.ico',
-      template: path.resolve(__dirname, 'src/templates/index.html'),
-      inject: 'body'
+      filename: "index.html",
+      favicon: "src/public/images/favicon/favicon.ico",
+      template: path.resolve(__dirname, "src/templates/index.html"),
+      inject: "body",
     }),
     new CopyWebpackPlugin({
       patterns: [
         {
-          from: path.resolve(__dirname, 'src/public'),
-          to: path.resolve(__dirname, 'dist/')
-        }
-      ]
+          from: path.resolve(__dirname, "src/public"),
+          to: path.resolve(__dirname, "dist/"),
+        },
+      ],
     }),
     new WorkboxWebpackPlugin.GenerateSW({
-      swDest: './sw.bundle.js'
+      swDest: "./sw.bundle.js",
     }),
-    new MiniCssExtractPlugin()
-  ]
-}
+    new MiniCssExtractPlugin(),
+  ],
+};

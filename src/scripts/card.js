@@ -1,6 +1,6 @@
-const data = require('../DATA.json')
+const data = require("../DATA.json");
 
-const cards = document.getElementById('cards')
+const cards = document.getElementById("cards");
 
 data.restaurants.forEach((x) => {
   cards.innerHTML += `
@@ -10,5 +10,5 @@ data.restaurants.forEach((x) => {
         <p>Rating : ${x.rating} / 5.0</p>
         <p>Lokasi : Kota ${x.city}</p>
     </div>
-  `
-})
+  `;
+});
