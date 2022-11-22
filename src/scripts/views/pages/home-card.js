@@ -7,14 +7,13 @@ import {
 
 const createCard = (data) => {
   const card = new RestaurantCard();
-  const image = new RestaurantImage({
-    src: `${config.BASE_IMAGE_URL}/${data.pictureId}`,
-  });
-  const description = new RestaurantDescription({
-    name: data.name,
-    rate: data.rating,
-    city: data.city,
-  });
+  const image = new RestaurantImage();
+  const description = new RestaurantDescription();
+
+  image.setAttribute("src", `${config.BASE_IMAGE_URL}/${data.pictureId}`);
+  description.setAttribute("name", data.name);
+  description.setAttribute("rate", data.rating);
+  description.setAttribute("city", data.city);
 
   card.append(image);
   card.append(description);

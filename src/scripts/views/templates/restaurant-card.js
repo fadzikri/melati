@@ -5,11 +5,11 @@ class RestaurantCard extends HTMLElement {
   }
 }
 
-class RestaurantImage {
-  constructor({ src }) {
-    this._src = src;
+class RestaurantImage extends HTMLElement {
+  connectedCallback() {
+    this._src = this.getAttribute("src") || null;
 
-    this._renderWithImage();
+    this._src ? this._renderWithImage() : this._renderWithNoImage();
   }
 
   _renderWithImage() {
@@ -17,15 +17,25 @@ class RestaurantImage {
         <img src="${this._src}" width="100%">
     `;
   }
+
+  _renderWithNoImage() {
+    this.innerHTML = `
+        <div>
+          <p>Memuat...</p>
+        <div>
+    `;
+  }
 }
 
-class RestaurantDescription {
-  constructor({ name, rate, city }) {
-    this._name = name;
-    this._rate = rate;
-    this._city = city;
+class RestaurantDescription extends HTMLElement {
+  connectedCallback() {
+    this._name = this.getAttribute("name") || null;
+    this._rate = this.getAttribute("rate") || null;
+    this._city = this.getAttribute("city") || null;
 
-    this._renderWithDescription();
+    this._name
+      ? this._renderWithDescription()
+      : this._renderWithNoDescription();
   }
 
   _renderWithDescription() {
@@ -35,8 +45,18 @@ class RestaurantDescription {
         <p>Lokasi : ${this._city}</p>
     `;
   }
+
+  _renderWithNoDescription() {
+    this.innerHTML = `
+        <p>Nama : Memuat...</p>
+        <p>Rating : Memuat...</p>
+        <p>Lokasi : Memuat...</p>
+    `;
+  }
 }
 
 customElements.define("restaurant-card", RestaurantCard);
+customElements.define("restaurant-image", RestaurantImage);
+customElements.define("restaurant-description", RestaurantDescription);
 
 export { RestaurantCard, RestaurantImage, RestaurantDescription };
