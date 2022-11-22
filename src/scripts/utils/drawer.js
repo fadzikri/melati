@@ -11,12 +11,12 @@ const drawer = {
 
   _toggleDrawer (event, drawer) {
     event.stopPropagation()
-    drawer.classList.toggle('open')
+    drawer.classList.toggle('navbar-open')
   },
 
   _closeDrawer (event, drawer) {
     event.stopPropagation()
-    drawer.classList.remove('open')
+    drawer.classList.remove('navbar-open')
   }
 }
 
