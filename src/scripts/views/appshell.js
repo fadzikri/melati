@@ -1,6 +1,6 @@
 import drawer from "../utils/drawer";
 import year from "../utils/year";
-import "../utils/card-create";
+import "../utils/card";
 
 class Navbar {
   constructor({ button, drawer, content }) {

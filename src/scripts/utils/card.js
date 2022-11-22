@@ -10,7 +10,9 @@ axios.get(`${config.BASE_DATA_URL}/list`).then((lists) => {
   const cards = document.getElementById("cards");
   lists.data.restaurants.forEach((list) => {
     const card = new RestaurantCard();
-    const image = new RestaurantImage(list.id, list.pictureid);
+    const image = new RestaurantImage(
+      `${config.BASE_IMAGE_URL}/${list.pictureId}`
+    );
     const description = new RestaurantDescription({
       name: list.name,
       rate: list.rating,

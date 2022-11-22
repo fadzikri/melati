@@ -1,6 +1,4 @@
 /* eslint-disable no-unused-expressions */
-import restaurantLogic from "../../utils/card-logic";
-
 class RestaurantCard extends HTMLElement {
   connectedCallback() {
     this.setAttribute("tabindex", "0");
@@ -9,46 +7,28 @@ class RestaurantCard extends HTMLElement {
 }
 
 class RestaurantImage extends HTMLElement {
-  constructor(id, src) {
+  constructor(src) {
     super();
-    this._id = id || null;
     this._src = src || null;
 
-    return restaurantLogic({
-      status: this._id,
-      render: this._renderWithImage(),
-      skeleton: this._renderSkeletonImage(),
-    });
+    this._renderWithImage();
   }
 
   _renderWithImage() {
     this.innerHTML = `
-        <img src="${this._src}" id="${this._id}" width="100%">
-    `;
-  }
-
-  _renderSkeletonImage() {
-    this.innerHTML = `
-        <div class="skeleton-image">
-            <p>Memuat....</p>
-        </div>
+        <img src="${this._src}" width="100%">
     `;
   }
 }
 
 class RestaurantDescription extends HTMLElement {
-  constructor({ id, name, rate, city }) {
+  constructor({ name, rate, city }) {
     super();
-    this._id = id || null;
     this._name = name || null;
     this._rate = rate || null;
     this._city = city || null;
 
-    return restaurantLogic({
-      status: this._id,
-      render: this._renderWithDescription(),
-      skeleton: this._renderSkeletonDescription(),
-    });
+    this._renderWithDescription();
   }
 
   _renderWithDescription() {
@@ -56,14 +36,6 @@ class RestaurantDescription extends HTMLElement {
         <p>Nama : ${this._name}</p>
         <p>Rating : ${this._rate} / 5.0</p>
         <p>Lokasi : ${this._city}</p>
-    `;
-  }
-
-  _renderSkeletonDescription() {
-    this.innerHTML = `
-        <p>Nama : Memuat...</p>
-        <p>Rating : Memuat... / 5.0</p>
-        <p>Lokasi : Kota Memuat...</p>
     `;
   }
 }
