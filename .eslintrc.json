@@ -4,7 +4,7 @@
         "es2021": true,
         "node": true
     },
-    "extends": "standard",
+    "extends": [ "standard", "prettier" ],
     "overrides": [
     ],
     "parserOptions": {
@@ -16,6 +16,10 @@
         "no-console": 0,
         "no-underscore-dangle": 0,
         "no-restricted-globals": 0,
-        "linebreak-style": 0
-    }
+        "linebreak-style": 0,
+        "prettier/prettier": ["error"]
+    },
+    "plugins": [
+		"prettier"
+	]
 }
