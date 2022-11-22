@@ -1,11 +1,11 @@
-import list from "../scripts/utils/lists";
-import detail from "../scripts/utils/detail";
-import favourite from "../scripts/utils/favourite";
+import lists from "../scripts/views/pages/card";
+import detail from "../scripts/views/pages/detail";
+// import favourite from "../scripts/utils/favourite";
 
 const routes = {
-  "/": list, // default page
+  "/": lists,
   "/detail/:id": detail,
-  "/favourite": favourite,
+  // "/favourite": favourite,
 };
 
 export default routes;

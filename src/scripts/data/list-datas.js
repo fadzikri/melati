@@ -4,9 +4,9 @@ import axios from "axios";
 import config from "../global/config";
 
 class ListDatas {
-  static async datas() {
+  static async datas(endpoint) {
     const response = await axios
-      .get(`${config.BASE_DATA_URL}/list`)
+      .get(`${config.BASE_DATA_URL}/${endpoint}`)
       .then((res) => res.data.restaurants)
       .catch((err) => {
         if (err.code === "ERR_NETWORK") {

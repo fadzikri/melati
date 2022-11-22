@@ -14,7 +14,7 @@ class RestaurantImage extends HTMLElement {
 
   _renderWithImage() {
     this.innerHTML = `
-        <img src="${this._src}" width="100%">
+        <img src="${this._src}" alt="" width="100%">
     `;
   }
 

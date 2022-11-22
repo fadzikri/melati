@@ -1,25 +1,18 @@
-import config from "../../global/config";
-import {
-  RestaurantCard,
-  RestaurantDescription,
-  RestaurantImage,
-} from "../templates/content-restaurant";
+import ListDatas from "../../data/list-datas";
+import lists from "../../utils/lists";
 
 const card = {
-  async render(data) {
-    const card = new RestaurantCard();
-    const image = new RestaurantImage();
-    const description = new RestaurantDescription();
+  async render(content) {
+    const datas = await ListDatas.datas("list");
+    const container = content;
 
-    image.setAttribute("src", `${config.BASE_IMAGE_URL}/${data.pictureId}`);
-    description.setAttribute("name", data.name);
-    description.setAttribute("rate", data.rating);
-    description.setAttribute("city", data.city);
+    if (datas) {
+      container.innerHTML = "";
+    }
 
-    card.append(image);
-    card.append(description);
-
-    return card;
+    datas.forEach(async (data) => {
+      container.append(await lists.render(data));
+    });
   },
 };
 

@@ -1,5 +1,7 @@
+import UrlParser from "../../routers/url-parser";
+import routes from "../../routers/routes";
 import drawer from "../utils/drawer";
-import lists from "../utils/lists";
+// import lists from "../utils/lists";
 import year from "../utils/year";
 
 class Navbar {
@@ -26,7 +28,9 @@ class Content {
   }
 
   async _renderContent() {
-    await lists.render(this._content);
+    const url = UrlParser.parseActiveUrlWithCombiner();
+    const page = routes[url];
+    await page.render(this._content);
   }
 }
 
