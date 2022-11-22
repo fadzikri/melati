@@ -1,9 +1,9 @@
 /* eslint-disable no-unused-vars */
-import axios from "axios";
 import "regenerator-runtime";
 import "../styles/main.css";
 // import swRegister from "./utils/sw";
-import { Navbar, /* Cards, */ Footer } from "./views/appshell";
+import { Navbar, Footer } from "./views/appshell";
+import "./utils/card-create";
 
 const navbar = new Navbar({
   button: document.getElementById("hamburger"),

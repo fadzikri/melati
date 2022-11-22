@@ -1,6 +1,6 @@
 import drawer from "../utils/drawer";
 import year from "../utils/year";
-// import { RestaurantCard, RestaurantImage, RestaurantDescription } from "./templates/restaurant-card";
+import "../utils/card-create";
 
 class Navbar {
   constructor({ button, drawer, content }) {
@@ -19,16 +19,6 @@ class Navbar {
     });
   }
 }
-
-// class Cards {
-//   constructor(content) {
-//     this._cards = content;
-//   }
-
-//   _renderAllCard() {
-
-//   }
-// }
 
 class Footer {
   constructor(content) {

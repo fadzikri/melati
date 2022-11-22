@@ -6,4 +6,4 @@ const restaurantLogic = ({ status, render, skeleton }) => {
   }
 };
 
-export default { restaurantLogic };
+export default restaurantLogic;

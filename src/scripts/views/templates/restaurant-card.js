@@ -1,22 +1,18 @@
-import { restaurantLogic } from "../../utils/card-logic";
+/* eslint-disable no-unused-expressions */
+import restaurantLogic from "../../utils/card-logic";
 
 class RestaurantCard extends HTMLElement {
   connectedCallback() {
-    return this._render();
-  }
-
-  _render() {
-    return (this.innerHTML = `
-            <div class="card" tabindex="0">
-            <div>
-        `);
+    this.setAttribute("tabindex", "0");
+    this.classList.add("card");
   }
 }
 
 class RestaurantImage extends HTMLElement {
-  connectedCallback() {
-    this._src = this.getAttribute("src") || null;
-    this._id = this.getAttribute("14") || null;
+  constructor(id, src) {
+    super();
+    this._id = id || null;
+    this._src = src || null;
 
     return restaurantLogic({
       status: this._id,
@@ -41,13 +37,15 @@ class RestaurantImage extends HTMLElement {
 }
 
 class RestaurantDescription extends HTMLElement {
-  connectedCallback() {
-    this._name = this.getAttribute("name") || null;
-    this._rate = this.getAttribute("rate") || null;
-    this._city = this.getAttribute("city") || null;
+  constructor({ id, name, rate, city }) {
+    super();
+    this._id = id || null;
+    this._name = name || null;
+    this._rate = rate || null;
+    this._city = city || null;
 
     return restaurantLogic({
-      status: this._name,
+      status: this._id,
       render: this._renderWithDescription(),
       skeleton: this._renderSkeletonDescription(),
     });
@@ -56,8 +54,8 @@ class RestaurantDescription extends HTMLElement {
   _renderWithDescription() {
     this.innerHTML = `
         <p>Nama : ${this._name}</p>
-        <p>Rating : ${this._rating} / 5.0</p>
-        <p>Lokasi : Kota ${this._city}</p>
+        <p>Rating : ${this._rate} / 5.0</p>
+        <p>Lokasi : ${this._city}</p>
     `;
   }
 
@@ -69,5 +67,9 @@ class RestaurantDescription extends HTMLElement {
     `;
   }
 }
+
+customElements.define("restaurant-card", RestaurantCard);
+customElements.define("restaurant-image", RestaurantImage);
+customElements.define("restaurant-description", RestaurantDescription);
 
 export { RestaurantCard, RestaurantImage, RestaurantDescription };
