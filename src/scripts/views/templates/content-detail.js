@@ -23,10 +23,10 @@ class RestaurantDetail {
       <img src="${this._image}" width="100%">
       <div>
           <p>Nama : ${this._name}</p>
-          <p>Rating : ${this._rating}</p>
+          <p>Rating : ${this._rating} / 5.0</p>
           <p>Deskripsi: ${this._description}</p>
           <p>Alamat : ${this._address}</p>
-          <p>Lokasi : ${this._city}</p>
+          <p>Lokasi : Kota ${this._city}</p>
           <p>Kategori : ${this._categories}</p>
           <p>Menu : ${this._menus}</p>
           <p>Review : ${this._customerReviews}</p>

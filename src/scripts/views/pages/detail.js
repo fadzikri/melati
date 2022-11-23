@@ -13,8 +13,8 @@ const detail = {
     const menus = process.menu(datas.menus);
     const show = new RestaurantDetail({ datas, image, categories, menus });
 
-    process.changeTitletoDetail();
-    process.cssDetail();
+    process.changeTitleToDetail();
+    process.cssContentDetail();
 
     content.append(show._renderDetail());
   },

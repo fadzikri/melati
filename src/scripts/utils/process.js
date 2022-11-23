@@ -32,7 +32,7 @@ const process = {
     return result;
   },
 
-  changeTitletoDetail() {
+  changeTitleToDetail() {
     const judul = document.getElementById("judul-daftar");
     const deskripsi = document.getElementById("deskripsi-daftar");
 
@@ -40,7 +40,7 @@ const process = {
     deskripsi.innerHTML = "Penjelasan lengkap mengenai restoran ini";
   },
 
-  changeTitleInitial() {
+  changeTitleToInitial() {
     const judul = document.getElementById("judul-daftar");
     const deskripsi = document.getElementById("deskripsi-daftar");
 
@@ -48,12 +48,12 @@ const process = {
     deskripsi.innerHTML = "Restoran yang berafiliasi dengan kami.";
   },
 
-  cssDetail() {
+  cssContentDetail() {
     const content = document.getElementById("content");
     content.classList.add("detail");
   },
 
-  cssInitial() {
+  cssContentInitial() {
     const content = document.getElementById("content");
     content.classList.remove("detail");
   },

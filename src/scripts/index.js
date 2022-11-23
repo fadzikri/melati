@@ -16,8 +16,8 @@ const content = new Content(document.getElementById("content"));
 const footer = new Footer(document.getElementById("tahun"));
 
 window.addEventListener("popstate", () => {
-  process.changeTitleInitial();
-  process.cssInitial();
+  process.changeTitleToInitial();
+  process.cssContentInitial();
 });
 
 window.addEventListener("hashchange", () => {

@@ -44,7 +44,7 @@ class RestaurantDescription extends HTMLElement {
     this.innerHTML = `
         <p id=${this._id}>Nama : ${this._name}</p>
         <p id=${this._id}>Rating : ${this._rate} / 5.0</p>
-        <p id=${this._id}>Lokasi : ${this._city}</p>
+        <p id=${this._id}>Lokasi : Kota ${this._city}</p>
     `;
   }
 
