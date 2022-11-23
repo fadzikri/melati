@@ -278,16 +278,12 @@ hr {
 
 .review {
   background-color: #e3e3e3;
-  padding: 10px;
+  padding: 20px;
   margin-bottom: 10px;
 }
 
 .review:first-child {
   margin-top: 10px;
-}
-
-.review:last-child {
-  margin-bottom: 0;
 }
 
 .review-header {
@@ -311,11 +307,18 @@ hr {
   font-size: var(--cont-rs);
 }
 
+.input-review .input-name {
+  margin-top: 0;
+  padding: 20px;
+  background-color: #e3e3e3;
+  border: 0;
+}
+
 .input-review textarea {
   resize: vertical;
-  min-height: 60px;
-  max-height: 100px;
-  padding: 10px;
+  min-height: 100px;
+  max-height: 150px;
+  padding: 20px;
   background-color: #e3e3e3;
   border: 0;
 }
@@ -324,6 +327,22 @@ hr {
   background-color: #516C8D;
   border: 0;
   color: #DDDDDD;
+  height: 35px;
+  transition: background-color 0.15s ease-in-out;
+}
+
+.input-review button:hover {
+  background-color: #3e536d;
+  cursor: pointer;
+}
+
+.input-review button:active {
+  background-color: #34465c;
+}
+
+.hr-review {
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 @media screen and (min-width: 600px) {

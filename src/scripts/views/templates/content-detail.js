@@ -1,5 +1,6 @@
 class RestaurantDetail {
   constructor({ datas, image, categories, menus, review }) {
+    this._id = datas.id;
     this._image = image;
     this._name = datas.name;
     this._description = datas.description;
@@ -31,15 +32,17 @@ class RestaurantDetail {
           <p>Kategori : ${this._categories.innerHTML}</p>
           <p>Menu : ${this._menus.innerHTML}</p>
           <p>Customer Review :</p>
-      </div>
-    `;
+          </div>
+          `;
 
     detailElement.append(this._customerReviews);
 
     detailElement.innerHTML += `
-      <form class="input-review" id="input-review">
-        <textarea id="input-text" placeholder="Berikan Reviewmu disini!"></textarea>
-        <button id="input-btn">Kirim</button>
+      <hr class="hr-review">
+      <form class="input-review">
+        <input id="input-name" class="input-name" placeholder="Namamu" required>
+        <textarea id="input-text" placeholder="Berikan Reviewmu disini!" required></textarea>
+        <button id="${this._id}" class="input-btn">Kirim</button>
       </form>
     `;
 
