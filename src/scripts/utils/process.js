@@ -73,6 +73,12 @@ const process = {
     const content = document.getElementById("content");
     content.classList.remove("detail");
   },
+
+  hrefToInitial() {
+    const hamburger = document.getElementById("hamburger");
+
+    hamburger.setAttribute("href", `${window.location.origin}#`);
+  },
 };
 
 export default process;
