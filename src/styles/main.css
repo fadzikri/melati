@@ -36,6 +36,44 @@ p, restaurant-text {
   font-size: 13px;
 }
 
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+main {
+  min-height: calc(100vh - (75px * 2));
+}
+
+section {
+  margin: 20px;
+}
+
+section * {
+  color: #516C8D;
+}
+
+section.hero {
+  margin: 0;
+  padding: 0;
+  height: 500px;
+  background-image: url(../public/images/heros/hero-image.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+div.detail {
+  margin-bottom: 0;
+  grid-template-columns: 1fr;
+}
+
+footer {
+  background-color: #516C8D;
+  padding: 27.5px;
+  text-align: center;
+}
+
 .skip {
   color: #28385E;
   position: absolute;
@@ -45,12 +83,6 @@ p, restaurant-text {
 
 .skip:focus {
   z-index: 1;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .container {
@@ -112,15 +144,6 @@ header {
   padding: 22px 80px;
 }
 
-section.hero {
-  margin: 0;
-  padding: 0;
-  height: 500px;
-  background-image: url(../public/images/heros/hero-image.jpg);
-  background-size: cover;
-  background-position: center;
-}
-
 .hero-latar {
   background-color: #161f2c54;
   width: 100%;
@@ -144,18 +167,6 @@ section.hero {
 .hero-latar p {
   font-size: 15px;
   padding: 0 20px;
-}
-
-main {
-  min-height: calc(100vh - (75px * 2));
-}
-
-section {
-  margin: 20px;
-}
-
-section * {
-  color: #516C8D;
 }
 
 .judul-daftar {
@@ -226,17 +237,6 @@ section * {
 
 .card restaurant-text:last-child {
   margin-bottom: 0;
-}
-
-div.detail {
-  margin-bottom: 0;
-  grid-template-columns: 1fr;
-}
-
-footer {
-  background-color: #516C8D;
-  padding: 27.5px;
-  text-align: center;
 }
 
 @media screen and (min-width: 600px) {
