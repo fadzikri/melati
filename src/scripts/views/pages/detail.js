@@ -1,6 +1,7 @@
 import ListDatas from "../../data/list-datas";
 import config from "../../global/config";
 import process from "../../utils/process";
+import reviewSend from "../../utils/send-review";
 import RestaurantDetail from "../templates/content-detail";
 
 const detail = {
@@ -24,6 +25,8 @@ const detail = {
     process.cssContentDetail();
 
     content.append(show._renderDetail());
+
+    reviewSend();
   },
 };
 

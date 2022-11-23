@@ -2,9 +2,8 @@
 import "regenerator-runtime";
 import "../styles/main.css";
 import process from "./utils/process";
-// import swRegister from "./utils/sw";
+import swRegister from "./utils/sw";
 import { Navbar, Content, Footer } from "./views/appshell";
-import reviewSend from "./utils/send-review";
 
 const navbar = new Navbar({
   button: document.getElementById("hamburger"),
@@ -26,6 +25,5 @@ window.addEventListener("hashchange", () => {
 });
 
 window.addEventListener("load", () => {
-  // swRegister();
-  reviewSend();
+  swRegister();
 });

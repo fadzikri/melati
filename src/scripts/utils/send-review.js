@@ -6,8 +6,6 @@ import config from "../global/config";
 const reviewSend = () => {
   const buttonReview = document.getElementsByClassName("input-btn")[0];
 
-  console.log(buttonReview);
-
   buttonReview.addEventListener("click", (e) => {
     let name = document.getElementById("input-name");
     let review = document.getElementById("input-text");
