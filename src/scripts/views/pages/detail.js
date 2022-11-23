@@ -34,7 +34,7 @@ const detail = {
     content.append(show._renderDetail());
 
     reviewSend();
-    likeButton();
+    likeButton(datas);
   },
 };
 
