@@ -9,26 +9,53 @@ const process = {
     });
 
     result.append(subresult);
+    return result;
   },
 
   menu(datas) {
     const result = document.createElement("ul");
     let subresult = new String();
 
-    datas.forEach((data) => {
-      const foods = document.createElement("ul");
-      let makanan = new String();
+    for (const property in datas) {
+      const foodrink = document.createElement("ul");
+      let subfoodrink = new String();
 
-      data.forEach((food) => {
-        makanan += `<li>${food.name}</li>`;
+      datas[property].forEach((data) => {
+        subfoodrink += `<li>${data.name}</li>`;
       });
 
-      foods.append(makanan);
-
-      subresult += `${foods}`;
-    });
+      foodrink.append(subfoodrink);
+      subresult += foodrink;
+    }
 
     result.append(subresult);
+    return result;
+  },
+
+  changeTitletoDetail() {
+    const judul = document.getElementById("judul-daftar");
+    const deskripsi = document.getElementById("deskripsi-daftar");
+
+    judul.innerHTML = "Deskripsi Restoran";
+    deskripsi.innerHTML = "Penjelasan lengkap mengenai restoran ini";
+  },
+
+  changeTitleInitial() {
+    const judul = document.getElementById("judul-daftar");
+    const deskripsi = document.getElementById("deskripsi-daftar");
+
+    judul.innerHTML = "Daftar Restoran";
+    deskripsi.innerHTML = "Restoran yang berafiliasi dengan kami.";
+  },
+
+  cssDetail() {
+    const content = document.getElementById("content");
+    content.classList.add("detail");
+  },
+
+  cssInitial() {
+    const content = document.getElementById("content");
+    content.classList.remove("detail");
   },
 };
 

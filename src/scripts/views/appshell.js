@@ -1,7 +1,6 @@
 import UrlParser from "../../routers/url-parser";
 import routes from "../../routers/routes";
 import drawer from "../utils/drawer";
-// import lists from "../utils/lists";
 import year from "../utils/year";
 
 class Navbar {
@@ -24,16 +23,19 @@ class Navbar {
 class Content {
   constructor(content) {
     this._content = content;
-    this._renderContent();
+    this.renderContent();
   }
 
-  async _renderContent() {
+  async renderContent() {
     const url = UrlParser.parseActiveUrlWithCombiner();
     const page = routes[url];
+    const id = UrlParser.parseActiveUrlWithoutCombiner().id;
 
-    console.log(routes);
-
-    await page.render(this._content);
+    if (id) {
+      await page.render(this._content, id);
+    } else {
+      await page.render(this._content, null);
+    }
   }
 }
 

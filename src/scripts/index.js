@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import "regenerator-runtime";
 import "../styles/main.css";
+import process from "./utils/process";
 // import swRegister from "./utils/sw";
 import { Navbar, Content, Footer } from "./views/appshell";
 
@@ -13,6 +14,15 @@ const navbar = new Navbar({
 const content = new Content(document.getElementById("content"));
 
 const footer = new Footer(document.getElementById("tahun"));
+
+window.addEventListener("popstate", () => {
+  process.changeTitleInitial();
+  process.cssInitial();
+});
+
+window.addEventListener("hashchange", () => {
+  content.renderContent();
+});
 
 window.addEventListener("load", () => {
   // swRegister();

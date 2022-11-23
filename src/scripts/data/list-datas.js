@@ -7,7 +7,13 @@ class ListDatas {
   static async datas(endpoint) {
     const response = await axios
       .get(`${config.BASE_DATA_URL}/${endpoint}`)
-      .then((res) => res.data.restaurants)
+      .then((res) => {
+        if (endpoint === "list") {
+          return res.data.restaurants;
+        } else {
+          return res.data.restaurant;
+        }
+      })
       .catch((err) => {
         if (err.code === "ERR_NETWORK") {
           return console.log("Masalah Jaringan!");

@@ -1,12 +1,22 @@
-// import ListDatas from "../../data/list-datas";
-// import RestaurantDetail from "../templates/content-detail";
+import ListDatas from "../../data/list-datas";
+import config from "../../global/config";
+import process from "../../utils/process";
+import RestaurantDetail from "../templates/content-detail";
 
 const detail = {
-  param: true,
-
   async render(content, idDetail) {
-    // const datas = await ListDatas.datas(`detail/${idDetail}`);
-    // const show = new RestaurantDetail({ datas, catagories, menus });
+    content.innerHTML = "";
+
+    const datas = await ListDatas.datas(`detail/${idDetail}`);
+    const image = `${config.BASE_IMAGE_URL}/${datas.pictureId}`;
+    const categories = process.category(datas.categories);
+    const menus = process.menu(datas.menus);
+    const show = new RestaurantDetail({ datas, image, categories, menus });
+
+    process.changeTitletoDetail();
+    process.cssDetail();
+
+    content.append(show._renderDetail());
   },
 };
 

@@ -182,11 +182,21 @@ section * {
   margin: 0 auto;
 }
 
-.card {
+.card, .detail {
   background-color: #eeeeee;
   padding: 15px;
   border-radius: 3.5px;
   margin-bottom: 15px;
+  transition: background-color 0.15s ease-in-out;
+}
+
+.card:hover {
+  background-color: #cccccc;  
+  cursor: pointer;
+}
+
+.card:active {
+  background-color: #bbbbbb;  
 }
 
 .card:last-child {
@@ -216,6 +226,11 @@ section * {
 
 .card restaurant-text:last-child {
   margin-bottom: 0;
+}
+
+div.detail {
+  margin-bottom: 0;
+  grid-template-columns: 1fr;
 }
 
 footer {

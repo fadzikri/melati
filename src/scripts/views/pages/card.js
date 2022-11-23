@@ -2,8 +2,6 @@ import ListDatas from "../../data/list-datas";
 import lists from "../../utils/lists";
 
 const card = {
-  param: false,
-
   async render(content, param) {
     const datas = await ListDatas.datas("list");
     const container = content;
