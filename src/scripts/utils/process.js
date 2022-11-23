@@ -2,13 +2,13 @@
 const process = {
   category(datas) {
     const result = document.createElement("ul");
-    let subresult = new String();
 
     datas.forEach((data) => {
-      subresult += `<li>${data.name}</li>`;
+      result.append(`<li>${data.name}</li>`);
     });
 
-    result.append(subresult);
+    console.log(result);
+
     return result;
   },
 
