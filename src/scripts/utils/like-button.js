@@ -4,6 +4,10 @@ const likeButton = async (data) => {
   const like = document.getElementById("like");
   const love = document.getElementsByClassName("fa")[0];
 
+  if (await operationDb.getRestaurant(data.id)) {
+    love.classList.remove("fa-heart-o");
+  }
+
   like.addEventListener("click", async (e) => {
     e.stopPropagation();
 
