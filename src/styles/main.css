@@ -36,6 +36,7 @@ h1, h2 {
 
 p, restaurant-text {
   font-size: 13px;
+  overflow-wrap: break-word;
 }
 
 header {
@@ -85,6 +86,7 @@ div.detail p {
   font-size: var(--cont-rs);
   margin-bottom: 10px;
   text-align: justify;
+  overflow-wrap: break-word;
 }
 
 div.detail p:first-child {
@@ -109,6 +111,10 @@ footer {
 hr {
   border: 1.25px solid #dddddd;
   background-color: #dddddd;
+}
+
+restaurant-detail {
+  max-width: 970px;
 }
 
 .skip {
@@ -204,6 +210,7 @@ hr {
 .hero-latar p {
   font-size: 15px;
   padding: 0 20px;
+  overflow-wrap: break-word;
 }
 
 .judul-daftar {
@@ -220,6 +227,7 @@ hr {
 
 .judul-daftar p {
   padding: 0 20px;
+  overflow-wrap: break-word;
 }
 
 .content {
@@ -294,10 +302,12 @@ hr {
 .review div.review-header p {
   margin: 0;
   padding: 0;
+  overflow-wrap: break-word;
 }
 
 .review-body p {
   text-align: justify;
+  overflow-wrap: break-word;
 }
 
 .input-review * {

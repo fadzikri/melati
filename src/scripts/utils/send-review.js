@@ -9,8 +9,10 @@ const reviewSend = () => {
   buttonReview.addEventListener("click", (e) => {
     let name = document.getElementById("input-name");
     let review = document.getElementById("input-text");
+    const cleanText = review.value.replace(/\n|\r/g, "<br>");
+
     const id = e.target.id;
-    const payload = { id, name: name.value, review: review.value };
+    const payload = { id, name: name.value, review: cleanText };
 
     name.value = "";
     review.value = "";
