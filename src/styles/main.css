@@ -355,6 +355,28 @@ restaurant-detail {
   margin-bottom: 30px;
 }
 
+.like {
+  width: 55px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #c3c3c3;
+  
+  position: fixed;
+  bottom: 16px;
+  right: 16px;
+  border-radius: 50%;
+  border: 0;
+  
+  font-size: 18px;
+  cursor: pointer;
+}
+
+.like .fa {
+  color: rgb(160, 0, 0);
+}
+
 @media screen and (min-width: 600px) {
   .home-link img{
     width: 35px;

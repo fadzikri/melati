@@ -1,6 +1,6 @@
 const common = require("./webpack.common");
 const { merge } = require("webpack-merge");
-const WorkboxWebpackPlugin = require("workbox-webpack-plugin");
+// const WorkboxWebpackPlugin = require("workbox-webpack-plugin");
 
 module.exports = merge(common, {
   mode: "production",
@@ -21,10 +21,10 @@ module.exports = merge(common, {
       },
     ],
   },
-  plugins: [
-    new WorkboxWebpackPlugin.InjectManifest({
-      swSrc: "./src/scripts/sw.js",
-      swDest: "./sw.bundle.js",
-    }),
-  ],
+  // plugins: [
+  //   new WorkboxWebpackPlugin.InjectManifest({
+  //     swSrc: "./src/scripts/sw.js",
+  //     swDest: "./sw.bundle.js",
+  //   }),
+  // ],
 });

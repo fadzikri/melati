@@ -1,8 +1,9 @@
 import ListDatas from "../../data/list-datas";
 import config from "../../global/config";
+import likeButton from "../../utils/like-button";
 import process from "../../utils/process";
 import reviewSend from "../../utils/send-review";
-import RestaurantDetail from "../templates/content-detail";
+import { RestaurantDetail } from "../templates/content-detail";
 
 const detail = {
   async render(content, idDetail) {
@@ -27,6 +28,7 @@ const detail = {
     content.append(show._renderDetail());
 
     reviewSend();
+    likeButton();
   },
 };
 

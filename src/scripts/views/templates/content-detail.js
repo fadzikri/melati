@@ -44,6 +44,9 @@ class RestaurantDetail {
         <textarea id="input-text" placeholder="Berikan Reviewmu disini!" required></textarea>
         <button id="${this._id}" class="input-btn">Kirim</button>
       </form>
+      <restaurant-like class="like" id="like">
+        <i class="fa fa-heart fa-heart-o" aria-hidden="true"></i>
+      </restaurant-like>
     `;
 
     return detailElement;
@@ -54,7 +57,10 @@ class RestaurantDetailElement extends HTMLElement {}
 
 class RestaurantDetailReview extends HTMLElement {}
 
+class RestaurantLike extends HTMLElement {}
+
 customElements.define("restaurant-detail", RestaurantDetailElement);
 customElements.define("restaurant-review", RestaurantDetailReview);
+customElements.define("restaurant-like", RestaurantLike);
 
-export default RestaurantDetail;
+export { RestaurantDetail };
