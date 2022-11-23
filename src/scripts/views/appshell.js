@@ -30,6 +30,9 @@ class Content {
   async _renderContent() {
     const url = UrlParser.parseActiveUrlWithCombiner();
     const page = routes[url];
+
+    console.log(routes);
+
     await page.render(this._content);
   }
 }

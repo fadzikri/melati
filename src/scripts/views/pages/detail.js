@@ -1,11 +1,12 @@
-import ListDatas from "../../data/list-datas";
-import RestaurantDetail from "../templates/content-detail";
+// import ListDatas from "../../data/list-datas";
+// import RestaurantDetail from "../templates/content-detail";
 
 const detail = {
-  async render(idDetail) {
-    const datas = await ListDatas.datas(`detail/${idDetail}`);
+  param: true,
 
-    const show = new RestaurantDetail({ datas , catagories, menus });
+  async render(content, idDetail) {
+    // const datas = await ListDatas.datas(`detail/${idDetail}`);
+    // const show = new RestaurantDetail({ datas, catagories, menus });
   },
 };
 
