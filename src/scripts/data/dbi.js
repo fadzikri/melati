@@ -11,6 +11,9 @@ const operationDb = {
   async getRestaurant(id) {
     return (await dbPromise).get(store, id);
   },
+  async getAllRestaurants() {
+    return (await dbPromise).getAll(store);
+  },
   async putRestaurant(datas) {
     return (await dbPromise).put(store, datas);
   },

@@ -34,6 +34,7 @@ class Content {
     if (id) {
       await page.render(this._content, id);
     } else {
+      console.log(page);
       await page.render(this._content, null);
     }
   }

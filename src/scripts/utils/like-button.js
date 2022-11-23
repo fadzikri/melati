@@ -24,7 +24,7 @@ const likeButton = async (data) => {
 const dataRestaurant = (data) => {
   return {
     id: data.id,
-    image: data.pictureId,
+    pictureId: data.pictureId,
     name: data.name,
     rate: data.rating,
     city: data.city,
