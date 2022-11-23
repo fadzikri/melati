@@ -4,31 +4,25 @@ const process = {
     const result = document.createElement("ul");
 
     datas.forEach((data) => {
-      result.append(`<li>${data.name}</li>`);
+      const list = document.createElement("li");
+      list.innerHTML = data.name;
+      result.append(list);
     });
-
-    console.log(result);
 
     return result;
   },
 
   menu(datas) {
     const result = document.createElement("ul");
-    let subresult = new String();
 
     for (const property in datas) {
-      const foodrink = document.createElement("ul");
-      let subfoodrink = new String();
-
       datas[property].forEach((data) => {
-        subfoodrink += `<li>${data.name}</li>`;
+        const list = document.createElement("li");
+        list.innerHTML = data.name;
+        result.append(list);
       });
-
-      foodrink.append(subfoodrink);
-      subresult += foodrink;
     }
 
-    result.append(subresult);
     return result;
   },
 

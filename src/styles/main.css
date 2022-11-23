@@ -76,7 +76,7 @@ div.detail {
 div.detail img {
   height: 400px;
   object-fit: cover;
-  margin-bottom: 25px;
+  margin-bottom: 30px;
 }
 
 div.detail p {
@@ -85,8 +85,17 @@ div.detail p {
   text-align: justify;
 }
 
+div.detail p:first-child {
+  margin-top: 30px;
+}
+
 div.detail p:last-child {
   margin-bottom: 0;
+}
+
+div.detail li {
+  margin-left: 20px;
+  font-size: 18px;
 }
 
 
@@ -94,6 +103,11 @@ footer {
   background-color: #516C8D;
   padding: 27.5px;
   text-align: center;
+}
+
+hr {
+  border: 1.25px solid #dddddd;
+  background-color: #dddddd;
 }
 
 .skip {
