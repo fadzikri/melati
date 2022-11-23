@@ -68,7 +68,7 @@ section.hero {
 
 div.detail {
   margin-bottom: 0;
-  grid-template-columns: 1fr;
+  display: block;
   padding: 0;
   background-color: #eeeeee;
   padding: 15px;
@@ -111,10 +111,6 @@ footer {
 hr {
   border: 1.25px solid #dddddd;
   background-color: #dddddd;
-}
-
-restaurant-detail {
-  max-width: 970px;
 }
 
 .skip {

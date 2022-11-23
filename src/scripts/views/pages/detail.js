@@ -14,6 +14,7 @@ const detail = {
     const categories = process.category(datas.categories);
     const menus = process.menu(datas.menus);
     const review = process.review(datas.customerReviews);
+    const hamburger = document.getElementById("hamburger");
     const show = new RestaurantDetail({
       datas,
       image,
@@ -21,6 +22,11 @@ const detail = {
       menus,
       review,
     });
+
+    hamburger.setAttribute(
+      "href",
+      `${window.location.origin}/#/detail/${datas.id}`
+    );
 
     process.changeTitleToDetail();
     process.cssContentDetail();
