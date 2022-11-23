@@ -1,5 +1,5 @@
 class RestaurantDetail {
-  constructor({ datas, image, categories, menus }) {
+  constructor({ datas, image, categories, menus, review }) {
     this._image = image;
     this._name = datas.name;
     this._description = datas.description;
@@ -8,9 +8,7 @@ class RestaurantDetail {
     this._categories = categories;
     this._menus = menus;
     this._rating = datas.rating;
-    this._customerReviews = datas.customerReviews;
-
-    console.log(this._customerReviews);
+    this._customerReviews = review;
 
     this._renderDetail();
   }
@@ -32,8 +30,17 @@ class RestaurantDetail {
           <p>Lokasi : Kota ${this._city}</p>
           <p>Kategori : ${this._categories.innerHTML}</p>
           <p>Menu : ${this._menus.innerHTML}</p>
-          <p>Review : ${this._customerReviews.innerHTML}</p>
+          <p>Customer Review :</p>
       </div>
+    `;
+
+    detailElement.append(this._customerReviews);
+
+    detailElement.innerHTML += `
+      <form class="input-review" id="input-review">
+        <textarea id="input-text" placeholder="Berikan Reviewmu disini!"></textarea>
+        <button id="input-btn">Kirim</button>
+      </form>
     `;
 
     return detailElement;
@@ -42,6 +49,9 @@ class RestaurantDetail {
 
 class RestaurantDetailElement extends HTMLElement {}
 
+class RestaurantDetailReview extends HTMLElement {}
+
 customElements.define("restaurant-detail", RestaurantDetailElement);
+customElements.define("restaurant-review", RestaurantDetailReview);
 
 export default RestaurantDetail;

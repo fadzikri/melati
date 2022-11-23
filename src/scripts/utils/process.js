@@ -26,6 +26,28 @@ const process = {
     return result;
   },
 
+  review(datas) {
+    const comments = document.createElement("restaurant-review");
+
+    datas.forEach((data) => {
+      const containerReview = document.createElement("div");
+      containerReview.classList.add("review");
+      containerReview.innerHTML = `
+        <div class="review-header">
+          <p>${data.name}</p>
+          <p>${data.date}</p>
+        </div>
+        <div class="review-body">
+          <p>${data.review}</p>
+        </div>
+      `;
+
+      comments.append(containerReview);
+    });
+
+    return comments;
+  },
+
   changeTitleToDetail() {
     const judul = document.getElementById("judul-daftar");
     const deskripsi = document.getElementById("deskripsi-daftar");

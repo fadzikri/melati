@@ -11,7 +11,14 @@ const detail = {
     const image = `${config.BASE_IMAGE_URL}/${datas.pictureId}`;
     const categories = process.category(datas.categories);
     const menus = process.menu(datas.menus);
-    const show = new RestaurantDetail({ datas, image, categories, menus });
+    const review = process.review(datas.customerReviews);
+    const show = new RestaurantDetail({
+      datas,
+      image,
+      categories,
+      menus,
+      review,
+    });
 
     process.changeTitleToDetail();
     process.cssContentDetail();

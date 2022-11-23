@@ -1,6 +1,8 @@
 :root {
   --cont-w: 10px;
   --cont-d: 50px;
+  --cont-rs: 13px;
+  --cont-rx: 18px;
 }
 
 * {
@@ -74,13 +76,13 @@ div.detail {
 }
 
 div.detail img {
-  height: 400px;
+  height: 200px;
   object-fit: cover;
   margin-bottom: 30px;
 }
 
 div.detail p {
-  font-size: 18px;
+  font-size: var(--cont-rs);
   margin-bottom: 10px;
   text-align: justify;
 }
@@ -95,9 +97,8 @@ div.detail p:last-child {
 
 div.detail li {
   margin-left: 20px;
-  font-size: 18px;
+  font-size: var(--cont-rs);
 }
-
 
 footer {
   background-color: #516C8D;
@@ -275,6 +276,56 @@ hr {
   margin-bottom: 0;
 }
 
+.review {
+  background-color: #e3e3e3;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.review:first-child {
+  margin-top: 10px;
+}
+
+.review:last-child {
+  margin-bottom: 0;
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.review div.review-header p {
+  margin: 0;
+  padding: 0;
+}
+
+.review-body p {
+  text-align: justify;
+}
+
+.input-review * {
+  width: 100%;
+  margin-top: 10px;
+  height: 30px;
+  font-size: var(--cont-rs);
+}
+
+.input-review textarea {
+  resize: vertical;
+  min-height: 60px;
+  max-height: 100px;
+  padding: 10px;
+  background-color: #e3e3e3;
+  border: 0;
+}
+
+.input-review button {
+  background-color: #516C8D;
+  border: 0;
+  color: #DDDDDD;
+}
+
 @media screen and (min-width: 600px) {
   .home-link img{
     width: 35px;
@@ -348,6 +399,22 @@ hr {
 
   .judul-daftar p {
     font-size: 18px;
+  }
+
+  div.detail img {
+    height: 400px;
+  }
+
+  div.detail p {
+    font-size: var(--cont-rx);
+  }
+
+  div.detail li {
+    font-size: var(--cont-rx);
+  }
+
+  .input-review * {
+    font-size: var(--cont-rx)
   }
 }
 
