@@ -26,7 +26,7 @@ const dataRestaurant = (data) => {
     id: data.id,
     pictureId: data.pictureId,
     name: data.name,
-    rate: data.rating,
+    rating: data.rating,
     city: data.city,
   };
 };

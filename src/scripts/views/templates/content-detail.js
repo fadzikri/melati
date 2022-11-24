@@ -17,7 +17,6 @@ class RestaurantDetail {
   _renderDetail() {
     const detailElement = new RestaurantDetailElement();
 
-    detailElement.classList.add("detail");
     detailElement.setAttribute("tabindex", "0");
 
     detailElement.innerHTML = `

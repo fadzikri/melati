@@ -48,12 +48,12 @@ const process = {
     return comments;
   },
 
-  changeTitleToDetail() {
+  changeTitleToDetail(judulText, deskripsiText) {
     const judul = document.getElementById("judul-daftar");
     const deskripsi = document.getElementById("deskripsi-daftar");
 
-    judul.innerHTML = "Deskripsi Restoran";
-    deskripsi.innerHTML = "Penjelasan lengkap mengenai restoran ini";
+    judul.innerHTML = judulText;
+    deskripsi.innerHTML = deskripsiText;
   },
 
   changeTitleToInitial() {

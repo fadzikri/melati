@@ -373,6 +373,11 @@ hr {
   color: rgb(160, 0, 0);
 }
 
+.skeleton-image-detail {
+  margin-bottom: 30px;
+  height: 250px;
+}
+
 @media screen and (min-width: 600px) {
   .home-link img{
     width: 35px;
@@ -462,6 +467,11 @@ hr {
 
   .input-review * {
     font-size: var(--cont-rx)
+  }
+
+  .skeleton-image-detail {
+    margin-bottom: 30px;
+    height: 400px;
   }
 }
 

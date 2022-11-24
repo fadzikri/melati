@@ -16,9 +16,10 @@ class ListDatas {
       })
       .catch((err) => {
         if (err.code === "ERR_NETWORK") {
-          return console.log("Masalah Jaringan!");
+          return false;
         }
       });
+
     return response;
   }
 }
