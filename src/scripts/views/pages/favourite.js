@@ -5,15 +5,20 @@ import process from "../../utils/process";
 const favourite = {
   async render(content, param) {
     const datas = await operationDb.getAllRestaurants();
-    const hamburger = document.getElementById("hamburger");
+    const favorite = document.getElementById("favorite");
     const container = content;
+
+    favorite.addEventListener("click", () => {
+      const locFav = `${window.location.origin}/#/favourite`;
+
+      favorite.setAttribute("href", locFav);
+      window.location.assign(locFav);
+    });
 
     process.changeTitleToDetail(
       "Restoran Favoritku",
       "Daftar restoran yang aku sukai."
     );
-
-    hamburger.setAttribute("href", `${window.location.origin}/#/favourite`);
 
     container.innerHTML = "";
 

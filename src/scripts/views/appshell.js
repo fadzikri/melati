@@ -31,8 +31,6 @@ class Content {
     const page = routes[url];
     const id = UrlParser.parseActiveUrlWithoutCombiner().id;
 
-    console.log(url);
-
     if (id) {
       await page.render(this._content, id);
     } else {

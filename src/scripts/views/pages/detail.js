@@ -13,8 +13,6 @@ const detail = {
     const image = `${config.BASE_IMAGE_URL}/${datas.pictureId}`;
     const hamburger = document.getElementById("hamburger");
 
-    console.log("A");
-
     hamburger.setAttribute(
       "href",
       `${window.location.origin}/#/detail/${datas.id}`
