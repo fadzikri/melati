@@ -9,13 +9,14 @@ class RestaurantImage extends HTMLElement {
   connectedCallback() {
     this._src = this.getAttribute("src") || null;
     this._id = this.getAttribute("id") || null;
+    this._name = this.getAttribute("name") || null;
 
     this._src ? this._renderWithImage() : this._renderWithNoImage();
   }
 
   _renderWithImage() {
     this.innerHTML = `
-        <img src="${this._src}" id="${this._id}" width="100%">
+        <img src="${this._src}" id="${this._id}" width="100%" alt="Foto untuk restoran ${this._name}">
     `;
   }
 

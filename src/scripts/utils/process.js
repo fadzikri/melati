@@ -27,7 +27,12 @@ const process = {
   },
 
   review(datas) {
+    const containerDetail = document.createElement(
+      "restaurant-detail-container"
+    );
     const comments = document.createElement("restaurant-review");
+
+    containerDetail.classList.add("detail");
 
     datas.forEach((data) => {
       const containerReview = document.createElement("div");
@@ -44,8 +49,9 @@ const process = {
 
       comments.append(containerReview);
     });
+    containerDetail.append(comments);
 
-    return comments;
+    return containerDetail;
   },
 
   changeTitleToDetail(judulText, deskripsiText) {
@@ -64,20 +70,29 @@ const process = {
     deskripsi.innerHTML = "Restoran yang berafiliasi dengan kami.";
   },
 
-  cssContentDetail() {
-    const content = document.getElementById("content");
-    content.classList.add("detail");
-  },
-
-  cssContentInitial() {
-    const content = document.getElementById("content");
-    content.classList.remove("detail");
-  },
-
   hrefToInitial() {
     const hamburger = document.getElementById("hamburger");
 
     hamburger.setAttribute("href", `${window.location.origin}#`);
+  },
+
+  skipContent() {
+    const skip = document.getElementsByClassName("skip")[0];
+    skip.setAttribute("href", `${window.location.hash}`);
+
+    const idRestoran = document.getElementById("restoran");
+    const hashRemove = window.location.hash.replace("#", "");
+    idRestoran.setAttribute("id", `${hashRemove}`);
+
+    skip.addEventListener("click", () => {
+      this.changeClassDetail();
+    });
+  },
+
+  changeClassDetail() {
+    const idContent = document.getElementById("content");
+    // const detailContent = document;
+    idContent.classList.remove("content");
   },
 };
 

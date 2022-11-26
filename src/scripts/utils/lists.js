@@ -19,6 +19,7 @@ const lists = {
 
     image.setAttribute("src", `${config.BASE_IMAGE_URL}/${data.pictureId}`);
     image.setAttribute("id", data.id);
+    image.setAttribute("name", data.name);
     description.setAttribute("name", data.name);
     description.setAttribute("rate", data.rating);
     description.setAttribute("city", data.city);

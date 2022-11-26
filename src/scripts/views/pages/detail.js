@@ -12,6 +12,10 @@ const detail = {
     const datas = await ListDatas.datas(`detail/${idDetail}`);
     const image = `${config.BASE_IMAGE_URL}/${datas.pictureId}`;
     const hamburger = document.getElementById("hamburger");
+    const contentDetail = document.getElementById("content");
+
+    contentDetail.classList.remove("content");
+    contentDetail.classList.add("content-detail");
 
     hamburger.setAttribute(
       "href",
@@ -23,7 +27,7 @@ const detail = {
       "Penjelasan lengkap mengenai restoran ini"
     );
 
-    process.cssContentDetail();
+    process.skipContent();
 
     if (!datas) {
       content.classList.add("detail");

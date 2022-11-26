@@ -2,7 +2,7 @@
 import "regenerator-runtime";
 import "../styles/main.css";
 import process from "./utils/process";
-import swRegister from "./utils/sw";
+// import swRegister from "./utils/sw";
 import { Navbar, Content, Footer } from "./views/appshell";
 
 const navbar = new Navbar({
@@ -17,7 +17,6 @@ const footer = new Footer(document.getElementById("tahun"));
 
 window.addEventListener("popstate", () => {
   process.changeTitleToInitial();
-  process.cssContentInitial();
 });
 
 window.addEventListener("hashchange", () => {
@@ -25,5 +24,5 @@ window.addEventListener("hashchange", () => {
 });
 
 window.addEventListener("load", () => {
-  swRegister();
+  // swRegister();
 });
