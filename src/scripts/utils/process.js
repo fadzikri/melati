@@ -1,3 +1,5 @@
+/* eslint-disable prettier/prettier */
+/* eslint-disable no-useless-return */
 /* eslint-disable no-new-wrappers */
 const process = {
   category(datas) {
@@ -108,12 +110,17 @@ const process = {
   changeIdSection() {
     const section = document.querySelectorAll("section")[1];
     const skip = document.getElementsByClassName("skip")[0];
+    const hash = window.location.hash;
+    
 
     if (window.location.hash === "#/favourite") {
-      const hash = window.location.hash;
+      skip.setAttribute("href", `${hash}`);
+      section.setAttribute("id", `${hash.replace("#", "")}`);
+    } else if ((window.location.hash).match(/detail/)) {
       skip.setAttribute("href", `${hash}`);
       section.setAttribute("id", `${hash.replace("#", "")}`);
     } else {
+      skip.setAttribute("href", `#restoran`);
       section.setAttribute("id", "restoran");
     }
   },
