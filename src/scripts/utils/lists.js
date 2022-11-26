@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 import config from "../global/config";
 import {
   RestaurantCard,
@@ -12,6 +13,12 @@ const lists = {
     const description = new RestaurantDescription();
 
     card.setAttribute("id", data.id);
+
+    card.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") {
+        window.location.href = `${window.location.origin}/#/detail/${e.target.id}`;
+      }
+    });
 
     card.addEventListener("click", (e) => {
       window.location.href = `${window.location.origin}/#/detail/${e.target.id}`;

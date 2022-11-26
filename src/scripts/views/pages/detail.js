@@ -31,20 +31,20 @@ const detail = {
       content.classList.add("detail");
 
       return (content.innerHTML = `
-        <restaurant-detail class="detail" tabindex="0">
-          <div class="skeleton-image skeleton-image-detail">
+        <restaurant-detail class="detail">
+          <div class="skeleton-image skeleton-image-detail" tabindex="0">
             <p>Memuat...</p>
           </div>
           <hr>
           <div>
-            <p>Nama : Memuat...</p>
-            <p>Rating : Memuat...</p>
-            <p>Deskripsi: Memuat...</p>
-            <p>Alamat : Memuat...</p>
-            <p>Lokasi : Memuat...</p>
-            <p>Kategori : Memuat...</p>
-            <p>Menu : Memuat...</p>
-            <p>Customer Review : Memuat...</p>
+            <p tabindex="0">Nama : Memuat...</p>
+            <p tabindex="0">Rating : Memuat...</p>
+            <p tabindex="0">Deskripsi: Memuat...</p>
+            <p tabindex="0">Alamat : Memuat...</p>
+            <p tabindex="0">Lokasi : Memuat...</p>
+            <p tabindex="0">Kategori : Memuat...</p>
+            <p tabindex="0">Menu : Memuat...</p>
+            <p tabindex="0">Customer Review : Memuat...</p>
           </div>
         </restaurant-detail>
       `);

@@ -17,23 +17,21 @@ class RestaurantDetail {
   _renderDetail() {
     const detailElement = new RestaurantDetailElement();
 
-    detailElement.setAttribute("tabindex", "0");
-
     detailElement.innerHTML = `
       <restaurant-detail-container class="detail">
-        <img src="${this._image}" width="100%" alt="Foto untuk restoran ${this._name}">
+        <img src="${this._image}" width="100%" alt="Foto untuk restoran ${this._name}" tabindex="0">
       </restaurant-detail-container>
       <hr>
       <restaurant-detail-container class="detail">
         <div>
-            <p>Nama : ${this._name}</p>
-            <p>Rating : ${this._rating} / 5.0</p>
-            <p>Deskripsi: ${this._description}</p>
-            <p>Alamat : ${this._address}</p>
-            <p>Lokasi : Kota ${this._city}</p>
-            <p>Kategori : ${this._categories.innerHTML}</p>
-            <p>Menu : ${this._menus.innerHTML}</p>
-            <p>Customer Review :</p>
+            <p tabindex="0">Nama : ${this._name}</p>
+            <p tabindex="0">Rating : ${this._rating} / 5.0</p>
+            <p tabindex="0">Deskripsi: ${this._description}</p>
+            <p tabindex="0">Alamat : ${this._address}</p>
+            <p tabindex="0">Lokasi : Kota ${this._city}</p>
+            <p tabindex="0">Kategori : ${this._categories.innerHTML}</p>
+            <p tabindex="0">Menu : ${this._menus.innerHTML}</p>
+            <p tabindex="0">Customer Review :</p>
         </div>
       </restaurant-detail-container>
     `;
@@ -43,7 +41,7 @@ class RestaurantDetail {
     detailElement.innerHTML += `
     <hr class="hr-review">
       <restaurant-detail-container class="detail">
-        <form class="input-review">
+        <form class="input-review" tabindex="0">
           <input id="input-name" class="input-name" placeholder="Namamu" required>
           <textarea id="input-text" placeholder="Berikan Reviewmu disini!" required></textarea>
           <button id="${this._id}" class="input-btn">Kirim</button>

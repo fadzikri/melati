@@ -37,6 +37,8 @@ const process = {
     datas.forEach((data) => {
       const containerReview = document.createElement("div");
       containerReview.classList.add("review");
+      containerReview.setAttribute("tabindex", "0");
+
       containerReview.innerHTML = `
         <div class="review-header">
           <p>${data.name}</p>
@@ -101,6 +103,19 @@ const process = {
     const idContent = document.getElementById("content");
     idContent.classList.remove("content");
     idContent.classList.add("content-detail");
+  },
+
+  changeIdSection() {
+    const section = document.querySelectorAll("section")[1];
+    const skip = document.getElementsByClassName("skip")[0];
+
+    if (window.location.hash === "#/favourite") {
+      const hash = window.location.hash;
+      skip.setAttribute("href", `${hash}`);
+      section.setAttribute("id", `${hash.replace("#", "")}`);
+    } else {
+      section.setAttribute("id", "restoran");
+    }
   },
 };
 

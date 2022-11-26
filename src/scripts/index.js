@@ -18,6 +18,7 @@ const footer = new Footer(document.getElementById("tahun"));
 window.addEventListener("popstate", () => {
   process.changeTitleToInitial();
   process.changeClassContentToNormal();
+  process.changeIdSection();
 });
 
 window.addEventListener("hashchange", () => {
