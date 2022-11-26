@@ -113,13 +113,13 @@ const process = {
     const hash = window.location.hash;
     
 
-    if (window.location.hash === "#/favourite") {
+    if ((window.location.hash).match(/favourite/)) {
       skip.setAttribute("href", `${hash}`);
       section.setAttribute("id", `${hash.replace("#", "")}`);
     } else if ((window.location.hash).match(/detail/)) {
       skip.setAttribute("href", `${hash}`);
       section.setAttribute("id", `${hash.replace("#", "")}`);
-    } else {
+    } else if  (!window.location.hash){
       skip.setAttribute("href", `#restoran`);
       section.setAttribute("id", "restoran");
     }

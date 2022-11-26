@@ -27,4 +27,5 @@ window.addEventListener("hashchange", () => {
 
 window.addEventListener("load", () => {
   // swRegister();
+  process.changeIdSection();
 });
