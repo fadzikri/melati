@@ -12,22 +12,20 @@ const detail = {
     const datas = await ListDatas.datas(`detail/${idDetail}`);
     const image = `${config.BASE_IMAGE_URL}/${datas.pictureId}`;
     const hamburger = document.getElementById("hamburger");
-    const contentDetail = document.getElementById("content");
-
-    contentDetail.classList.remove("content");
-    contentDetail.classList.add("content-detail");
 
     hamburger.setAttribute(
       "href",
       `${window.location.origin}/#/detail/${datas.id}`
     );
 
+    process.skipContent();
+
     process.changeTitleToDetail(
       "Deskripsi Restoran",
       "Penjelasan lengkap mengenai restoran ini"
     );
 
-    process.skipContent();
+    process.changeClassContentToDetail();
 
     if (!datas) {
       content.classList.add("detail");

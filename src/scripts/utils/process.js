@@ -80,19 +80,27 @@ const process = {
     const skip = document.getElementsByClassName("skip")[0];
     skip.setAttribute("href", `${window.location.hash}`);
 
-    const idRestoran = document.getElementById("restoran");
     const hashRemove = window.location.hash.replace("#", "");
+
+    const idRestoran = document.querySelectorAll("section")[1];
+
     idRestoran.setAttribute("id", `${hashRemove}`);
 
     skip.addEventListener("click", () => {
-      this.changeClassDetail();
+      setTimeout(() => this.changeClassContentToDetail(), 0);
     });
   },
 
-  changeClassDetail() {
+  changeClassContentToNormal() {
     const idContent = document.getElementById("content");
-    // const detailContent = document;
+    idContent.classList.remove("content-detail");
+    idContent.classList.add("content");
+  },
+
+  changeClassContentToDetail() {
+    const idContent = document.getElementById("content");
     idContent.classList.remove("content");
+    idContent.classList.add("content-detail");
   },
 };
 
