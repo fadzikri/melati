@@ -17,6 +17,7 @@ const favourite = {
       favoriteLi.setAttribute("href", locFav);
 
       process.changeClassContentToNormal();
+      e.preventDefault();
       e.stopPropagation();
     });
 
@@ -24,6 +25,7 @@ const favourite = {
       const locFav = `${window.location.origin}/#/favourite`;
 
       hamburger.setAttribute("href", locFav);
+      favoriteLi.setAttribute("href", locFav);
 
       process.changeClassContentToNormal();
       e.stopPropagation();
@@ -47,6 +49,7 @@ const favourite = {
         const locFav = `${window.location.origin}/#/favourite`;
 
         hamburger.setAttribute("href", locFav);
+        favoriteLi.setAttribute("href", locFav);
 
         process.changeClassContentToNormal();
         e.stopPropagation();

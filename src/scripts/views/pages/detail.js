@@ -30,8 +30,6 @@ const detail = {
       "Penjelasan lengkap mengenai restoran ini"
     );
 
-    process.changeClassContentToDetail();
-
     if (!datas) {
       content.classList.add("detail");
 

@@ -46,7 +46,7 @@ class RestaurantDetail {
           <textarea id="input-text" placeholder="Berikan Reviewmu disini!" required></textarea>
           <button id="${this._id}" class="input-btn">Kirim</button>
         </form>
-        <restaurant-like class="like" id="like">
+        <restaurant-like class="like" id="like" tabindex="0">
           <i class="fa fa-heart fa-heart-o" aria-hidden="true"></i>
         </restaurant-like>
       </restaurant-detail-container>

@@ -90,21 +90,27 @@ const process = {
 
     idRestoran.setAttribute("id", `${hashRemove}`);
 
-    skip.addEventListener("click", () => {
-      setTimeout(() => this.changeClassContentToDetail(), 0);
-    });
+    if ((window.location.hash).match(/detail/)) {
+      this.changeClassContentToDetail();
+    } else  {
+      this.changeClassContentToNormal();
+    }
   },
 
   changeClassContentToNormal() {
     const idContent = document.getElementById("content");
     setTimeout(() => idContent.classList.remove("content-detail"), 0); 
     setTimeout(() => idContent.classList.add("content"), 2);
+
+    if ((window.location.hash).match(/detail/)) {
+      this.changeClassContentToDetail();
+    }
   },
 
   changeClassContentToDetail() {
     const idContent = document.getElementById("content");
-    idContent.classList.remove("content");
-    idContent.classList.add("content-detail");
+    setTimeout(() => idContent.classList.remove("content"), 0); 
+    setTimeout(() => idContent.classList.add("content-detail"), 2);
   },
 
   changeIdSection() {

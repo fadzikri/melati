@@ -9,17 +9,27 @@ const likeButton = async (data) => {
   }
 
   like.addEventListener("click", async (e) => {
-    e.stopPropagation();
-    e.preventDefault();
+    await toogleLikeHeart(love, e, data);
+  });
 
-    love.classList.toggle("fa-heart-o");
-
-    if (love.classList.contains("fa-heart-o")) {
-      await operationDb.delRestaurant(data.id);
-    } else {
-      await operationDb.putRestaurant(dataRestaurant(data));
+  like.addEventListener("keypress", async (e) => {
+    if (e.key === "Enter") {
+      await toogleLikeHeart(love, e, data);
     }
   });
+};
+
+const toogleLikeHeart = async (love, e, data) => {
+  e.stopPropagation();
+  e.preventDefault();
+
+  love.classList.toggle("fa-heart-o");
+
+  if (love.classList.contains("fa-heart-o")) {
+    await operationDb.delRestaurant(data.id);
+  } else {
+    await operationDb.putRestaurant(dataRestaurant(data));
+  }
 };
 
 const dataRestaurant = (data) => {

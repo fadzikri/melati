@@ -23,7 +23,7 @@ window.addEventListener("popstate", () => {
 
 window.addEventListener("hashchange", () => {
   content.renderContent();
-  process.changeClassContentToNormal();
+  process.skipContent();
 });
 
 window.addEventListener("load", () => {
