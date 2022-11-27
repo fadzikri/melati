@@ -58,12 +58,16 @@ const process = {
     return containerDetail;
   },
 
-  changeTitleToDetail(judulText, deskripsiText) {
-    const judul = document.getElementById("judul-daftar");
-    const deskripsi = document.getElementById("deskripsi-daftar");
-
-    judul.innerHTML = judulText;
-    deskripsi.innerHTML = deskripsiText;
+  changeTitleTo({newTitle, newDescription }) {
+    const elTitle = document.getElementById("judul-daftar");
+    const elDescription = document.getElementById("deskripsi-daftar");
+    console.log("A");
+    
+    setTimeout(() => {
+    console.log("b");
+      elTitle.innerHTML = newTitle
+      elDescription.innerHTML = newDescription;
+    }, 0); 
   },
 
   changeTitleToInitial() {
@@ -72,6 +76,20 @@ const process = {
 
     judul.innerHTML = "Daftar Restoran";
     deskripsi.innerHTML = "Restoran yang berafiliasi dengan kami.";
+
+    if ((window.location.hash).match(/detail/)) {
+      this.changeTitleTo({
+        newTitle: "Detail Restoran",
+        newDescription: "Lengkap tentang restoran ini."
+      });
+    }
+    
+    if ((window.location.hash).match(/favourite/)) {
+      this.changeTitleTo({
+        newTitle: "Restoran Favourite",
+        newDescription: "Restoran saya."
+      });
+    }
   },
 
   hrefToInitial() {

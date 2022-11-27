@@ -24,11 +24,7 @@ const detail = {
     });
 
     process.skipContent();
-
-    process.changeTitleToDetail(
-      "Deskripsi Restoran",
-      "Penjelasan lengkap mengenai restoran ini"
-    );
+    process.changeTitleToInitial();
 
     if (!datas) {
       content.classList.add("detail");

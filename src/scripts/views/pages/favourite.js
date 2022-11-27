@@ -57,10 +57,7 @@ const favourite = {
       }
     });
 
-    process.changeTitleToDetail(
-      "Restoran Favoritku",
-      "Daftar restoran yang aku sukai."
-    );
+    process.changeTitleToInitial();
 
     container.innerHTML = "";
 
