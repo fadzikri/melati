@@ -19,8 +19,35 @@ const reviewSend = () => {
 
     axios
       .post(`${config.BASE_DATA_URL}/review`, payload)
-      .then((res) => true)
+      .then(async (res) => {
+        const { customerReviews } = res.data;
+
+        return await createReviewAfterPost(customerReviews);
+      })
       .catch((err) => false);
+  });
+};
+
+const createReviewAfterPost = async (data) => {
+  const containerReview = document.getElementsByTagName("restaurant-review")[0];
+  containerReview.innerHTML = "";
+
+  data.forEach((rev) => {
+    const div = document.createElement("div");
+    div.classList.add("review");
+    div.setAttribute("tabindex", "0");
+
+    div.innerHTML = `
+      <div class="review-header">
+        <p>${rev.name}</p>
+        <p>${rev.date}</p>
+      </div>
+      <div class="review-body">
+        <p>${rev.review}</p>
+      </div>
+    `;
+
+    containerReview.append(div);
   });
 };
 
