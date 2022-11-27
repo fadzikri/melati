@@ -61,10 +61,8 @@ const process = {
   changeTitleTo({newTitle, newDescription }) {
     const elTitle = document.getElementById("judul-daftar");
     const elDescription = document.getElementById("deskripsi-daftar");
-    console.log("A");
     
     setTimeout(() => {
-    console.log("b");
       elTitle.innerHTML = newTitle
       elDescription.innerHTML = newDescription;
     }, 0); 

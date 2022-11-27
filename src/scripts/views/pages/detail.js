@@ -12,6 +12,11 @@ const detail = {
     const datas = await ListDatas.datas(`detail/${idDetail}`);
     const image = `${config.BASE_IMAGE_URL}/${datas.pictureId}`;
     const hamburger = document.getElementById("hamburger");
+    const fav = document.getElementById("favorite-li");
+
+    fav.addEventListener("click", () => {
+      return window.location.assign(`${fav.getAttribute("href")}`);
+    });
 
     hamburger.setAttribute(
       "href",
