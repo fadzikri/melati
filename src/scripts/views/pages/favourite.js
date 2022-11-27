@@ -6,13 +6,52 @@ const favourite = {
   async render(content, param) {
     const datas = await operationDb.getAllRestaurants();
     const favorite = document.getElementById("favorite");
+    const hamburger = document.getElementById("hamburger");
+    const favoriteLi = document.getElementById("favorite-li");
     const container = content;
 
-    favorite.addEventListener("click", () => {
+    favorite.addEventListener("click", (e) => {
       const locFav = `${window.location.origin}/#/favourite`;
 
-      favorite.setAttribute("href", locFav);
-      window.location.assign(locFav);
+      hamburger.setAttribute("href", locFav);
+      favoriteLi.setAttribute("href", locFav);
+
+      process.changeClassContentToNormal();
+      e.stopPropagation();
+    });
+
+    hamburger.addEventListener("click", (e) => {
+      const locFav = `${window.location.origin}/#/favourite`;
+
+      hamburger.setAttribute("href", locFav);
+
+      process.changeClassContentToNormal();
+      e.stopPropagation();
+      e.preventDefault();
+    });
+
+    favorite.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") {
+        const locFav = `${window.location.origin}/#/favourite`;
+
+        hamburger.setAttribute("href", locFav);
+        favoriteLi.setAttribute("href", locFav);
+
+        process.changeClassContentToNormal();
+        e.stopPropagation();
+      }
+    });
+
+    hamburger.addEventListener("keypress", (e) => {
+      if (e.key === "Enter") {
+        const locFav = `${window.location.origin}/#/favourite`;
+
+        hamburger.setAttribute("href", locFav);
+
+        process.changeClassContentToNormal();
+        e.stopPropagation();
+        e.preventDefault();
+      }
     });
 
     process.changeTitleToDetail(

@@ -5,6 +5,7 @@ import {
   RestaurantDescription,
   RestaurantImage,
 } from "../views/templates/content-restaurant";
+import process from "./process";
 
 const lists = {
   async render(data) {
@@ -12,16 +13,22 @@ const lists = {
     const image = new RestaurantImage();
     const description = new RestaurantDescription();
 
+    process.skipContent();
+
     card.setAttribute("id", data.id);
 
     card.addEventListener("keypress", (e) => {
       if (e.key === "Enter") {
         window.location.href = `${window.location.origin}/#/detail/${e.target.id}`;
+        e.stopPropagation();
+        e.preventDefault();
       }
     });
 
     card.addEventListener("click", (e) => {
       window.location.href = `${window.location.origin}/#/detail/${e.target.id}`;
+      e.stopPropagation();
+      e.preventDefault();
     });
 
     image.setAttribute("src", `${config.BASE_IMAGE_URL}/${data.pictureId}`);

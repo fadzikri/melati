@@ -97,8 +97,8 @@ const process = {
 
   changeClassContentToNormal() {
     const idContent = document.getElementById("content");
-    idContent.classList.remove("content-detail");
-    idContent.classList.add("content");
+    setTimeout(() => idContent.classList.remove("content-detail"), 0); 
+    setTimeout(() => idContent.classList.add("content"), 2);
   },
 
   changeClassContentToDetail() {

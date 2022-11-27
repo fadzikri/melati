@@ -10,6 +10,7 @@ const likeButton = async (data) => {
 
   like.addEventListener("click", async (e) => {
     e.stopPropagation();
+    e.preventDefault();
 
     love.classList.toggle("fa-heart-o");
 

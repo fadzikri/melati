@@ -18,6 +18,11 @@ const detail = {
       `${window.location.origin}/#/detail/${datas.id}`
     );
 
+    hamburger.addEventListener("click", (e) => {
+      e.stopPropagation();
+      e.preventDefault();
+    });
+
     process.skipContent();
 
     process.changeTitleToDetail(
