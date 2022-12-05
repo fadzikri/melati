@@ -2,7 +2,7 @@
 import "../styles/main.css";
 import "regenerator-runtime";
 import process from "./utils/process";
-import swRegister from "./utils/sw";
+// import swRegister from "./utils/sw";
 import { Navbar, Content, Footer } from "./views/appshell";
 
 const navbar = new Navbar({
@@ -26,6 +26,6 @@ window.addEventListener("hashchange", () => {
 });
 
 window.addEventListener("load", () => {
-  swRegister();
+  // swRegister();
   process.changeIdSection();
 });

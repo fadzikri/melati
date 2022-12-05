@@ -3,8 +3,6 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const ImageminWebpackPlugin = require("imagemin-webpack-plugin").default;
-const imageminPngquant = require("imagemin-pngquant");
 
 module.exports = {
   entry: {
@@ -47,14 +45,6 @@ module.exports = {
           from: path.resolve(__dirname, "src/public"),
           to: path.resolve(__dirname, "dist/"),
         },
-      ],
-    }),
-    new ImageminWebpackPlugin({
-      plugins: [
-        imageminPngquant({
-          quality: [0.4, 0.5],
-          verbose: true,
-        }),
       ],
     }),
   ],
