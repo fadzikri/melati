@@ -63,6 +63,8 @@ section * {
 }
 
 section.hero {
+  position: relative;
+  height: 500px;
   margin: 0;
   padding: 0;
 }
@@ -87,6 +89,7 @@ restaurant-card, restaurant-image, restaurant-description {
   position: absolute;
   background-color: #DDDDDD;
   padding: 5px;
+  font-size: 15px;
 }
 
 .skip:focus {
@@ -140,6 +143,8 @@ restaurant-card, restaurant-image, restaurant-description {
 
 .navbar-open {
   transform: translate(0, 0);
+  position: absolute;
+  z-index: 10;
 }
 
 .navbar-item {
@@ -154,6 +159,18 @@ restaurant-card, restaurant-image, restaurant-description {
 .navbar-item a {
   font-size: 16px;
   padding: 22px 80px;
+}
+
+.hero-img {
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
+.hero-img img {
+  width: 100%;
+  object-fit: cover;
+  height: 500px;
 }
 
 .hero-latar {
@@ -484,6 +501,10 @@ restaurant-card, restaurant-image, restaurant-description {
   .skeleton-image-detail {
     margin-bottom: 30px;
     height: 400px;
+  }
+
+  .skip {
+    font-size: 16px;
   }
 }
 
