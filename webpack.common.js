@@ -2,6 +2,9 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const ImageminWebpackPlugin = require("imagemin-webpack-plugin").default;
+const imageminPngquant = require("imagemin-pngquant");
 
 module.exports = {
   entry: {
@@ -30,12 +33,22 @@ module.exports = {
     ],
   },
   plugins: [
+    new CleanWebpackPlugin(),
+    new ImageminWebpackPlugin({
+      plugins: [
+        imageminPngquant({
+          quality: [0.3, 0.6],
+          verbose: true,
+        }),
+      ],
+    }),
     new HtmlWebpackPlugin({
       filename: "index.html",
       favicon: "src/public/images/favicon/favicon.ico",
       template: path.resolve(__dirname, "src/templates/index.html"),
       inject: "body",
     }),
+    new MiniCssExtractPlugin(),
     new CopyWebpackPlugin({
       patterns: [
         {
@@ -44,6 +57,5 @@ module.exports = {
         },
       ],
     }),
-    new MiniCssExtractPlugin(),
   ],
 };
