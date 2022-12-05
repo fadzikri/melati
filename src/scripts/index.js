@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
-import "regenerator-runtime";
 import "../styles/main.css";
+import "regenerator-runtime";
 import process from "./utils/process";
 import swRegister from "./utils/sw";
 import { Navbar, Content, Footer } from "./views/appshell";

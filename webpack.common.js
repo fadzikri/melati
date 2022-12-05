@@ -34,14 +34,6 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new ImageminWebpackPlugin({
-      plugins: [
-        imageminPngquant({
-          quality: [0.3, 0.6],
-          verbose: true,
-        }),
-      ],
-    }),
     new HtmlWebpackPlugin({
       filename: "index.html",
       favicon: "src/public/images/favicon/favicon.ico",
@@ -55,6 +47,14 @@ module.exports = {
           from: path.resolve(__dirname, "src/public"),
           to: path.resolve(__dirname, "dist/"),
         },
+      ],
+    }),
+    new ImageminWebpackPlugin({
+      plugins: [
+        imageminPngquant({
+          quality: [0.4, 0.5],
+          verbose: true,
+        }),
       ],
     }),
   ],

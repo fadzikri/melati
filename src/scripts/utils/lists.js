@@ -12,6 +12,7 @@ const lists = {
     const card = new RestaurantCard();
     const image = new RestaurantImage();
     const description = new RestaurantDescription();
+    let idCard = data.id;
 
     process.skipContent();
 
@@ -19,6 +20,7 @@ const lists = {
 
     card.addEventListener("keypress", (e) => {
       if (e.key === "Enter") {
+        idCard = e.target.id;
         window.location.href = `${window.location.origin}/#/detail/${e.target.id}`;
         e.stopPropagation();
         e.preventDefault();
@@ -32,12 +34,23 @@ const lists = {
     });
 
     image.setAttribute("src", `${config.BASE_IMAGE_URL}/${data.pictureId}`);
-    image.setAttribute("id", data.id);
     image.setAttribute("name", data.name);
+
+    image.addEventListener("click", (e) => {
+      window.location.href = `${window.location.origin}/#/detail/${idCard}`;
+      e.stopPropagation();
+      e.preventDefault();
+    });
+
     description.setAttribute("name", data.name);
     description.setAttribute("rate", data.rating);
     description.setAttribute("city", data.city);
-    description.setAttribute("id", data.id);
+
+    description.addEventListener("click", (e) => {
+      window.location.href = `${window.location.origin}/#/detail/${idCard}`;
+      e.stopPropagation();
+      e.preventDefault();
+    });
 
     card.append(image);
     card.append(description);
