@@ -59,7 +59,7 @@ section {
 }
 
 section * {
-  color: #132d4c;
+  color: #244660;
 }
 
 section.hero {
@@ -72,7 +72,7 @@ section.hero {
 }
 
 footer {
-  background-color: #132d4c;
+  background-color: #244660;
   padding: 27.5px;
   text-align: center;
 }
@@ -104,7 +104,7 @@ restaurant-card, restaurant-image, restaurant-description {
 .container {
   padding: var(--cont-w);
   position: relative;
-  background-color: #132d4c;
+  background-color: #244660;
 }
 
 .home {
@@ -138,7 +138,7 @@ restaurant-card, restaurant-image, restaurant-description {
   position: absolute;
   transform: translate(-100%, 0);
   width: 100%;
-  background-color: #132d4c;
+  background-color: #244660;
   transition: transform 0.35s ease-in-out;
 }
 
@@ -346,7 +346,7 @@ restaurant-card, restaurant-image, restaurant-description {
 }
 
 .input-review button {
-  background-color: #132d4c;
+  background-color: #244660;
   border: 0;
   color: #DDDDDD;
   height: 35px;
