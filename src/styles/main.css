@@ -407,6 +407,11 @@ restaurant-card, restaurant-image, restaurant-description {
   height: 250px;
 }
 
+.lazy-skeleton {
+  background-color: #dddddd;
+  height: 500px;
+}
+
 @media screen and (min-width: 600px) {
   .home-link img{
     width: 35px;

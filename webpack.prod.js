@@ -1,6 +1,6 @@
 const common = require("./webpack.common");
 const { merge } = require("webpack-merge");
-// const WorkboxWebpackPlugin = require("workbox-webpack-plugin");
+const WorkboxWebpackPlugin = require("workbox-webpack-plugin");
 const ImageminWebpackPlugin = require("imagemin-webpack-plugin").default;
 const ImageminMozjpeg = require("imagemin-mozjpeg");
 
@@ -32,9 +32,9 @@ module.exports = merge(common, {
         }),
       ],
     }),
-    // new WorkboxWebpackPlugin.InjectManifest({
-    //   swSrc: "./src/scripts/sw.js",
-    //   swDest: "./sw.bundle.js",
-    // }),
+    new WorkboxWebpackPlugin.InjectManifest({
+      swSrc: "./src/scripts/sw.js",
+      swDest: "./sw.bundle.js",
+    }),
   ],
 });
