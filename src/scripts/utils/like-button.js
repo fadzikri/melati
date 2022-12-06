@@ -2,10 +2,10 @@ import operationDb from "../data/dbi";
 
 const likeButton = async (data) => {
   const like = document.getElementById("like");
-  const love = document.getElementsByClassName("fa")[0];
+  const love = document.getElementsByClassName("feather-heart")[0];
 
   if (await operationDb.getRestaurant(data.id)) {
-    love.classList.remove("fa-heart-o");
+    love.classList.remove("feather-heart-o");
   }
 
   like.addEventListener("click", async (e) => {
@@ -23,9 +23,9 @@ const toogleLikeHeart = async (love, e, data) => {
   e.stopPropagation();
   e.preventDefault();
 
-  love.classList.toggle("fa-heart-o");
+  love.classList.toggle("feather-heart-o");
 
-  if (love.classList.contains("fa-heart-o")) {
+  if (love.classList.contains("feather-heart-o")) {
     await operationDb.delRestaurant(data.id);
   } else {
     await operationDb.putRestaurant(dataRestaurant(data));

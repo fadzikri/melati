@@ -138,6 +138,7 @@ restaurant-card, restaurant-image, restaurant-description {
   width: 100%;
   background-color: #244660;
   transition: transform 0.35s ease-in-out;
+  z-index: 10;
 }
 
 .navbar-open {
@@ -397,8 +398,13 @@ restaurant-card, restaurant-image, restaurant-description {
   cursor: pointer;
 }
 
-.like .fa {
-  color: rgb(160, 0, 0);
+.like .feather-heart-x {
+  stroke: rgb(160, 0, 0);
+}
+
+.like .feather-heart-o {
+  fill: rgb(160, 0, 0);
+  stroke: rgb(160, 0, 0);
 }
 
 .skeleton-image-detail {

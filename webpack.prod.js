@@ -3,6 +3,7 @@ const { merge } = require("webpack-merge");
 const WorkboxWebpackPlugin = require("workbox-webpack-plugin");
 const ImageminWebpackPlugin = require("imagemin-webpack-plugin").default;
 const ImageminMozjpeg = require("imagemin-mozjpeg");
+const CompressionPlugin = require("compression-webpack-plugin");
 
 module.exports = merge(common, {
   mode: "production",
@@ -31,6 +32,10 @@ module.exports = merge(common, {
           progressive: true,
         }),
       ],
+    }),
+    new CompressionPlugin({
+      test: /.js$|.css$/,
+      algorithm: "gzip",
     }),
     new WorkboxWebpackPlugin.InjectManifest({
       swSrc: "./src/scripts/sw.js",
