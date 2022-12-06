@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start-dev": "webpack-dev-server --config webpack.dev.js",
-    "build": "node sharp.js && webpack --config webpack.prod.js",
+    "build": "webpack --config webpack.prod.js && node sharp.js",
     "serve": "http-server dist/",
-    "build-serve": "node sharp.js && webpack --config webpack.prod.js && http-server dist/",
+    "build-serve": "webpack --config webpack.prod.js && node sharp.js && http-server dist/",
     "eslint": "eslint ./src --fix",
     "prettier": "prettier ./src/templates/ --write",
     "test": "karma start",
