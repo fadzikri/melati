@@ -4,6 +4,7 @@ import "regenerator-runtime";
 import process from "./utils/process";
 import swRegister from "./utils/sw";
 import { Navbar, Content, Footer } from "./views/appshell";
+import fallbackImg from "./utils/fallback-img";
 
 const navbar = new Navbar({
   button: document.getElementById("hamburger"),
@@ -26,6 +27,7 @@ window.addEventListener("hashchange", () => {
 });
 
 window.addEventListener("load", () => {
+  fallbackImg();
   swRegister();
   process.changeIdSection();
 });
