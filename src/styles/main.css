@@ -409,6 +409,7 @@ restaurant-card, restaurant-image, restaurant-description {
 .lazy-skeleton {
   background-color: #dddddd;
   height: 500px;
+  display: block;
 }
 
 @media screen and (min-width: 600px) {
