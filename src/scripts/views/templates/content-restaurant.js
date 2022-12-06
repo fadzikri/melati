@@ -7,7 +7,7 @@ class RestaurantCard extends HTMLElement {
 
 class RestaurantImage extends HTMLElement {
   connectedCallback() {
-    this._src = this.getAttribute("src") || null;
+    this._src = this.getAttribute("data-src") || null;
     this._name = this.getAttribute("name") || null;
 
     this._src ? this._renderWithImage() : this._renderWithNoImage();
@@ -15,7 +15,7 @@ class RestaurantImage extends HTMLElement {
 
   _renderWithImage() {
     this.innerHTML = `
-        <img src="${this._src}" width="100%" alt="Foto untuk restoran ${this._name}">
+        <img class="lazy-skeleton lazyload" data-src="${this._src}" width="100%" alt="Foto untuk restoran ${this._name}">
     `;
   }
 

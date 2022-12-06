@@ -6,6 +6,8 @@ import {
   RestaurantImage,
 } from "../views/templates/content-restaurant";
 import process from "./process";
+import "lazysizes";
+import "lazysizes/plugins/parent-fit/ls.parent-fit";
 
 const lists = {
   async render(data) {
@@ -33,7 +35,10 @@ const lists = {
       e.preventDefault();
     });
 
-    image.setAttribute("src", `${config.BASE_IMAGE_URL}/${data.pictureId}`);
+    image.setAttribute(
+      "data-src",
+      `${config.BASE_IMAGE_URL}/${data.pictureId}`
+    );
     image.setAttribute("name", data.name);
 
     image.addEventListener("click", (e) => {
