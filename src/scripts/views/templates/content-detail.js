@@ -29,8 +29,8 @@ class RestaurantDetail {
             <p tabindex="0">Deskripsi: ${this._description}</p>
             <p tabindex="0">Alamat : ${this._address}</p>
             <p tabindex="0">Lokasi : Kota ${this._city}</p>
-            <p tabindex="0">Kategori : ${this._categories.innerHTML}</p>
-            <p tabindex="0">Menu : ${this._menus.innerHTML}</p>
+            <p tabindex="0">Kategori : <ul>${this._categories.innerHTML}</ul></p>
+            <p tabindex="0">Menu : <ul>${this._menus.innerHTML}</ul></p>
             <p tabindex="0">Customer Review :</p>
         </div>
       </restaurant-detail-container>

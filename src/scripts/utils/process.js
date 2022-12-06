@@ -7,6 +7,7 @@ const process = {
 
     datas.forEach((data) => {
       const list = document.createElement("li");
+      list.setAttribute("tabindex", "0")
       list.innerHTML = data.name;
       result.append(list);
     });
@@ -21,6 +22,7 @@ const process = {
       datas[property].forEach((data) => {
         const list = document.createElement("li");
         list.innerHTML = data.name;
+        list.setAttribute("tabindex", "0")
         result.append(list);
       });
     }

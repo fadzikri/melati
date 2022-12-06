@@ -261,7 +261,8 @@ restaurant-card, restaurant-image, restaurant-description {
 }
 
 .content-detail li {
-  margin-left: 20px;
+  margin-left: 40px;
+  margin-bottom: 5px;
   font-size: var(--cont-rs);
 }
 
