@@ -421,9 +421,6 @@ restaurant-card, restaurant-image, restaurant-description {
 }
 
 @media screen and (min-width: 600px) {
-  .home-link img{
-    width: 35px;
-  }
 
   .content {
     grid-template-columns: repeat(2, 1fr);
