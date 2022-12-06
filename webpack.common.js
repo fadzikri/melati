@@ -1,10 +1,7 @@
 const path = require("path");
-const glob = require("glob");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const { PurgeCSSPlugin } = require("purgecss-webpack-plugin");
-const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const CopyWebpackPlugin = require("copy-webpack-plugin");
 // const BundleAnalyzerPlugin = require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
 module.exports = {
@@ -29,20 +26,16 @@ module.exports = {
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: "asset/resource",
+        type: "asset",
       },
     ],
   },
   plugins: [
-    new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       filename: "index.html",
       favicon: "src/public/images/favicon/favicon.ico",
       template: path.resolve(__dirname, "src/templates/index.html"),
       inject: "body",
-    }),
-    new PurgeCSSPlugin({
-      paths: glob.sync(`${path.join(__dirname, "src")}/**/*`, { nodir: true }),
     }),
     new MiniCssExtractPlugin(),
     new CopyWebpackPlugin({
@@ -50,9 +43,6 @@ module.exports = {
         {
           from: path.resolve(__dirname, "src/public"),
           to: path.resolve(__dirname, "dist/"),
-          globOptions: {
-            ignore: ["**/heros/*"],
-          },
         },
       ],
     }),

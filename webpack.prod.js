@@ -1,9 +1,13 @@
+const path = require("path");
 const common = require("./webpack.common");
-const { merge } = require("webpack-merge");
+const glob = require("glob");
 const WorkboxWebpackPlugin = require("workbox-webpack-plugin");
+const { merge } = require("webpack-merge");
+const { PurgeCSSPlugin } = require("purgecss-webpack-plugin");
 const ImageminWebpackPlugin = require("imagemin-webpack-plugin").default;
 const ImageminMozjpeg = require("imagemin-mozjpeg");
 const CompressionPlugin = require("compression-webpack-plugin");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 
 module.exports = merge(common, {
   mode: "production",
@@ -25,6 +29,7 @@ module.exports = merge(common, {
     ],
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new ImageminWebpackPlugin({
       plugins: [
         ImageminMozjpeg({
@@ -36,6 +41,9 @@ module.exports = merge(common, {
     new CompressionPlugin({
       test: /.js$|.css$/,
       algorithm: "gzip",
+    }),
+    new PurgeCSSPlugin({
+      paths: glob.sync(`${path.join(__dirname, "src")}/**/*`, { nodir: true }),
     }),
     new WorkboxWebpackPlugin.InjectManifest({
       swSrc: "./src/scripts/sw.js",
