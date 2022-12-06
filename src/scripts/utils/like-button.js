@@ -5,6 +5,8 @@ const likeButton = async (data) => {
   const love = document.getElementsByClassName("feather-heart")[0];
 
   if (await operationDb.getRestaurant(data.id)) {
+    love.classList.remove("feather-heart-o");
+  } else {
     love.classList.remove("feather-heart-x");
   }
 
