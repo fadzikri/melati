@@ -5,9 +5,7 @@ const likeButton = async (data) => {
   const love = document.getElementsByClassName("feather-heart")[0];
 
   if (await operationDb.getRestaurant(data.id)) {
-    love.classList.remove("feather-heart-o");
-  } else {
-    love.classList.remove("feather-heart-x");
+    love.classList.add("feather-heart-x");
   }
 
   like.addEventListener("click", async (e) => {
@@ -27,7 +25,7 @@ const toogleLikeHeart = async (love, e, data) => {
 
   love.classList.toggle("feather-heart-x");
 
-  if (love.classList.contains("feather-heart-x")) {
+  if (!love.classList.contains("feather-heart-x")) {
     await operationDb.delRestaurant(data.id);
   } else {
     await operationDb.putRestaurant(dataRestaurant(data));
