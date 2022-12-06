@@ -121,6 +121,7 @@ restaurant-card, restaurant-image, restaurant-description {
 
 .home-link img{
   margin-right: 15px;
+  width: 32px;
 }
 
 .hamburger {
