@@ -143,8 +143,8 @@ const process = {
     } else if ((window.location.hash).match(/detail/)) {
       skip.setAttribute("href", `${hash}`);
       section.setAttribute("id", `${hash.replace("#", "")}`);
-    } else if  (!window.location.hash){
-      skip.setAttribute("href", `#restoran`);
+    } else if (!window.location.hash){
+      skip.setAttribute("href", "#restoran");
       section.setAttribute("id", "restoran");
     }
   },
