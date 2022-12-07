@@ -11,7 +11,8 @@
     "eslint": "eslint ./src --fix",
     "prettier": "prettier ./src/templates/ --write",
     "test": "karma start",
-    "img-res": "node sharp.js"
+    "img-res": "node sharp.js",
+    "e2e": "codeceptjs run --steps"
   },
   "keywords": [],
   "author": "fadzikri <fadzikri@disroot.org>",

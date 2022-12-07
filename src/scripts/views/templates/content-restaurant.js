@@ -22,7 +22,7 @@ class RestaurantImage extends HTMLElement {
   _renderWithNoImage() {
     this.innerHTML = `
         <div>
-          <p>Memuat...</p>
+          <p class="no-image">Memuat...</p>
         <div>
     `;
   }
@@ -41,7 +41,7 @@ class RestaurantDescription extends HTMLElement {
 
   _renderWithDescription() {
     this.innerHTML = `
-        <p>Nama : ${this._name}</p>
+        <p class="name-restaurant">Nama : ${this._name}</p>
         <p>Rating : ${this._rate} / 5.0</p>
         <p>Lokasi : Kota ${this._city}</p>
     `;

@@ -25,7 +25,7 @@ class RestaurantDetail {
       <restaurant-detail-container class="detail">
         <div>
             <p tabindex="0">Nama : ${this._name}</p>
-            <p tabindex="0">Rating : ${this._rating} / 5.0</p>
+            <p tabindex="0" class="rating-restaurant">Rating : ${this._rating} / 5.0</p>
             <p tabindex="0">Deskripsi: ${this._description}</p>
             <p tabindex="0">Alamat : ${this._address}</p>
             <p tabindex="0">Lokasi : Kota ${this._city}</p>
