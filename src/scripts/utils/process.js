@@ -103,16 +103,27 @@ const process = {
     skip.setAttribute("href", `${window.location.hash}`);
 
     const hashRemove = window.location.hash.replace("#", "");
-
+    const hash = window.location.hash;
+    const section = document.querySelectorAll("section")[1];
     const idRestoran = document.querySelectorAll("section")[1];
 
     idRestoran.setAttribute("id", `${hashRemove}`);
 
-    if ((window.location.hash).match(/detail/)) {
-      this.changeClassContentToDetail();
-    } else  {
+    if ((window.location.hash).match(/favourite/)) {
+      skip.setAttribute("href", `${hash}`);
+      section.setAttribute("id", `${hash.replace("#", "")}`);
       this.changeClassContentToNormal();
+      return;
+    } else if ((window.location.hash).match(/detail/)) {
+      skip.setAttribute("href", `${hash}`);
+      section.setAttribute("id", `${hash.replace("#", "")}`);
+      this.changeClassContentToDetail();
+      return;
     }
+
+    skip.setAttribute("href", "#restoran");
+      section.setAttribute("id", "restoran");
+      this.changeClassContentToNormal();
   },
 
   changeClassContentToNormal() {
@@ -129,24 +140,6 @@ const process = {
     const idContent = document.getElementById("content");
     setTimeout(() => idContent.classList.remove("content"), 0); 
     setTimeout(() => idContent.classList.add("content-detail"), 2);
-  },
-
-  changeIdSection() {
-    const section = document.querySelectorAll("section")[1];
-    const skip = document.getElementsByClassName("skip")[0];
-    const hash = window.location.hash;
-    
-
-    if ((window.location.hash).match(/favourite/)) {
-      skip.setAttribute("href", `${hash}`);
-      section.setAttribute("id", `${hash.replace("#", "")}`);
-    } else if ((window.location.hash).match(/detail/)) {
-      skip.setAttribute("href", `${hash}`);
-      section.setAttribute("id", `${hash.replace("#", "")}`);
-    } else {
-      skip.setAttribute("href", "#restoran");
-      section.setAttribute("id", "restoran");
-    }
   },
 };
 
