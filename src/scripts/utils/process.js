@@ -45,11 +45,11 @@ const process = {
 
       containerReview.innerHTML = `
         <div class="review-header">
-          <p>${data.name}</p>
+          <p class="review-name">${data.name}</p>
           <p>${data.date}</p>
         </div>
         <div class="review-body">
-          <p>${data.review}</p>
+          <p class="review-text">${data.review}</p>
         </div>
       `;
 

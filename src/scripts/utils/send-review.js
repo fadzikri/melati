@@ -39,11 +39,11 @@ const createReviewAfterPost = async (data) => {
 
     div.innerHTML = `
       <div class="review-header">
-        <p>${rev.name}</p>
+        <p class="review-name">${rev.name}</p>
         <p>${rev.date}</p>
       </div>
       <div class="review-body">
-        <p>${rev.review}</p>
+        <p class="review-text">${rev.review}</p>
       </div>
     `;
 
