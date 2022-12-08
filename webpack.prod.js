@@ -8,6 +8,7 @@ const ImageminWebpackPlugin = require("imagemin-webpack-plugin").default;
 const ImageminMozjpeg = require("imagemin-mozjpeg");
 const CompressionPlugin = require("compression-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 
 module.exports = merge(common, {
   mode: "production",
@@ -51,6 +52,7 @@ module.exports = merge(common, {
     }),
   ],
   optimization: {
+    minimizer: [new CssMinimizerPlugin()],
     splitChunks: {
       chunks: "all",
       minSize: 20000,
