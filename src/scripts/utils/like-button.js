@@ -1,9 +1,6 @@
 import operationDb from "../data/dbi";
 
-const likeButton = async (data) => {
-  const like = document.getElementById("like");
-  const love = document.getElementsByClassName("feather-heart")[0];
-
+const likeButton = async ({ data, like, love }) => {
   if (await operationDb.getRestaurant(data.id)) {
     love.classList.add("feather-heart-x");
   }
@@ -42,4 +39,4 @@ const dataRestaurant = (data) => {
   };
 };
 
-export default likeButton;
+export { likeButton, dataRestaurant };

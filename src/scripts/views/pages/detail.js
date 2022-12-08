@@ -68,7 +68,10 @@ const detail = {
     content.append(show._renderDetail());
 
     reviewSend();
-    likeButton(datas);
+
+    const like = document.getElementById("like");
+    const love = document.getElementsByClassName("feather-heart")[0];
+    likeButton({ data: datas, like, love, test: false });
   },
 };
 
