@@ -9,6 +9,7 @@ const ImageminMozjpeg = require("imagemin-mozjpeg");
 const CompressionPlugin = require("compression-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
+const HtmlMinimizerPlugin = require("html-minimizer-webpack-plugin");
 
 module.exports = merge(common, {
   mode: "production",
@@ -52,11 +53,12 @@ module.exports = merge(common, {
     }),
   ],
   optimization: {
-    minimizer: [new CssMinimizerPlugin()],
+    runtimeChunk: "single",
+    minimizer: [new CssMinimizerPlugin(), new HtmlMinimizerPlugin()],
     splitChunks: {
       chunks: "all",
       minSize: 20000,
-      maxSize: 70000,
+      maxSize: 20000,
       minChunks: 1,
       maxAsyncRequests: 30,
       maxInitialRequests: 30,
