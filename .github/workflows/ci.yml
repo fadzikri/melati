@@ -6,21 +6,18 @@ on:
       - main
  
 jobs:
-  test:
+  Unit_Testing:
     runs-on: ubuntu-latest
- 
-    strategy:
-      matrix:
-        node-version: [18.x]
- 
     steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Memasang paket metadata GitHub
+        uses: actions/checkout@v3
+      - name: Memasang paket Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
-      - name: Run Automated Test
+          node-version: latest
+      - name: Pasang semua paket NodeJS
         run: |
           npm install
+      - name: Uji coba unit testing
+        run: |
           npm run test
-          npm run e2e
