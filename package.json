@@ -4,14 +4,15 @@
   "description": "Aplikasi restoran sederhana.",
   "main": "index.js",
   "scripts": {
+    "spesial": "eslint ./*.js ./src --fix && prettier ./src/templates/ --write && karma start && codeceptjs run --steps && webpack --config webpack.prod.js && node sharp.js && http-server dist/",
     "start-dev": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js && node sharp.js",
     "serve": "http-server dist/",
     "build-serve": "webpack --config webpack.prod.js && node sharp.js && http-server dist/",
-    "eslint": "eslint ./src --fix",
+    "img-res": "node sharp.js",
+    "eslint": "eslint ./*.js ./src --fix",
     "prettier": "prettier ./src/templates/ --write",
     "test": "karma start",
-    "img-res": "node sharp.js",
     "e2e": "codeceptjs run --steps"
   },
   "keywords": [],

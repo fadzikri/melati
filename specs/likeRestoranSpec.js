@@ -1,11 +1,6 @@
-const { default: operationDb } = require("../src/scripts/data/dbi");
-const {
-  likeButton,
-  dataRestaurant,
-} = require("../src/scripts/utils/like-button");
-const {
-  RestaurantLike,
-} = require("../src/scripts/views/templates/content-detail");
+import operationDb from "../src/scripts/data/dbi";
+import { likeButton, dataRestaurant } from "../src/scripts/utils/like-button";
+import { RestaurantLike } from "../src/scripts/views/templates/content-detail";
 
 describe("Menyukai Restoran -->", () => {
   const initLikeButton = () => {
@@ -18,9 +13,9 @@ describe("Menyukai Restoran -->", () => {
     initLikeButton();
   });
 
-  it("Tampilkan Element Suka dalam keadaan tidak suka", () => {
+  it("Element suka masih dalam keadaan tidak suka", () => {
+    // feather-heart-x ini untuk membuat jadi hati penuh / suka
     const elemenSuka = document.getElementsByClassName("feather-heart-x")[0];
-
     expect(elemenSuka).toBeFalsy();
   });
 
@@ -43,6 +38,7 @@ describe("Menyukai Restoran -->", () => {
 
     elemenSuka.dispatchEvent(new Event("click"));
 
+    // Ketika sudah suka, nanti akan ada kelas feather-heart-x
     expect(hatiSvg).toHaveClass("feather-heart-x");
   });
 
@@ -55,12 +51,14 @@ describe("Menyukai Restoran -->", () => {
       rating: 4.2,
     };
 
+    // Coba operasi database
     await operationDb.putRestaurant(dataRestaurant(data));
 
     const dataIdb = await operationDb.getRestaurant(data.id);
 
     expect(dataIdb.id).toEqual(data.id);
 
+    // Hapus lagi biar tidak ganggun proses lain
     await operationDb.delRestaurant(dataIdb.id);
   });
 });
