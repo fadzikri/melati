@@ -1,6 +1,6 @@
 # Melati
 
-Katalog restoran sederhana
+Katalog restoran sederhana.
 
 Berjalan di : <https://melati.netlify.app/>
 
