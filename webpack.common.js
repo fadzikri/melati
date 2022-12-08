@@ -2,7 +2,7 @@ const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
-//const BundleAnalyzerPlugin =
+// const BundleAnalyzerPlugin =
 //  require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 
 module.exports = {
@@ -47,6 +47,6 @@ module.exports = {
         },
       ],
     }),
-//    new BundleAnalyzerPlugin(),
+    //    new BundleAnalyzerPlugin(),
   ],
 };

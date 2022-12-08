@@ -6,14 +6,14 @@ const { merge } = require("webpack-merge");
 const { PurgeCSSPlugin } = require("purgecss-webpack-plugin");
 const ImageminWebpackPlugin = require("imagemin-webpack-plugin").default;
 const ImageminMozjpeg = require("imagemin-mozjpeg");
-const CompressionPlugin = require("compression-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const HtmlMinimizerPlugin = require("html-minimizer-webpack-plugin");
-const zlib = require('zlib');
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = merge(common, {
   mode: "production",
+  devtool: "source-map",
   module: {
     rules: [
       {
@@ -40,18 +40,6 @@ module.exports = merge(common, {
         }),
       ],
     }),
-    new CompressionPlugin({
-      algorithm: "brotliCompress",
-      test: /\.(js|css|html|svg)$/,
-      compressionOptions: {
-        params: {
-          [zlib.constants.BROTLI_PARAM_QUALITY]: 11,
-        },
-      },
-      threshold: 10240,
-      minRatio: 0.8,
-      deleteOriginalAssets: true,
-    }),
     new PurgeCSSPlugin({
       paths: glob.sync(`${path.join(__dirname, "src")}/**/*`, { nodir: true }),
     }),
@@ -62,7 +50,11 @@ module.exports = merge(common, {
   ],
   optimization: {
     runtimeChunk: "single",
-    minimizer: [new CssMinimizerPlugin(), new HtmlMinimizerPlugin()],
+    minimizer: [
+      new CssMinimizerPlugin(),
+      new HtmlMinimizerPlugin(),
+      new TerserPlugin(),
+    ],
     splitChunks: {
       chunks: "all",
       minSize: 20000,
@@ -71,7 +63,7 @@ module.exports = merge(common, {
       maxAsyncRequests: 30,
       maxInitialRequests: 30,
       automaticNameDelimiter: "~",
-      enforceSizeThreshold: 50000,
+      enforceSizeThreshold: 30000,
       cacheGroups: {
         defaultVendors: {
           test: /[\\/]node_modules[\\/]/,
