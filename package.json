@@ -4,7 +4,6 @@
   "description": "Aplikasi restoran sederhana.",
   "main": "index.js",
   "scripts": {
-    "spesial": "eslint ./*.js ./src --fix && prettier ./src/templates/ --write && karma start && codeceptjs run --steps && webpack --config webpack.prod.js && node sharp.js && http-server dist/",
     "start-dev": "webpack-dev-server --config webpack.dev.js",
     "build": "webpack --config webpack.prod.js && node sharp.js",
     "serve": "http-server dist/",
