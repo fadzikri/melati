@@ -347,7 +347,7 @@ restaurant-card, restaurant-image, restaurant-description {
 
 .input-review .input-name {
   margin-top: 0;
-  padding: 20px;
+  padding: 24px;
   background-color: #e3e3e3;
   border: 0;
 }
@@ -365,7 +365,7 @@ restaurant-card, restaurant-image, restaurant-description {
   background-color: #244660;
   border: 0;
   color: #DDDDDD;
-  height: 35px;
+  height: 45px;
   transition: background-color 0.15s ease-in-out;
 }
 
