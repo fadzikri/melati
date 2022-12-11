@@ -1,0 +1,76 @@
+{
+    "id": "katalog-restoran-melati",
+    "name": "Katalog Melati",
+    "short_name": "Melati",
+    "theme_color": "#516C8D",
+    "background_color": "#DDDDDD",
+    "display": "standalone",
+    "start_url": "../../index.html",
+    "orientation": "any",
+    "description": "Katalog Restoran Melati",
+    "icons": [
+        {
+            "src": "android-chrome-512x512.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        },
+        {
+            "src": "android-chrome-192x192.png",
+            "sizes": "192x192",
+            "type": "image/png"
+        },
+        {
+            "src": "apple-touch-icon.png",
+            "sizes": "180x180",
+            "type": "image/png"
+        },
+        {
+            "src": "maskable/maskable_icon.png",
+            "sizes": "1280x1280",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "maskable/maskable_icon_x48.png",
+            "sizes": "48x48",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "maskable/maskable_icon_x72.png",
+            "sizes": "72x72",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "maskable/maskable_icon_x96.png",
+            "sizes": "96x96",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "maskable/maskable_icon_x128.png",
+            "sizes": "128x128",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "maskable/maskable_icon_x192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "maskable/maskable_icon_x384.png",
+            "sizes": "384x384",
+            "type": "image/png",
+            "purpose": "maskable"
+        },
+        {
+            "src": "maskable/maskable_icon_x512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "maskable"
+        }
+    ]
+}
