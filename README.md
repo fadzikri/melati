@@ -2,7 +2,7 @@
 
 Katalog restoran sederhana.
 
-Berjalan di : <https://melati.netlify.app/>
+Berjalan di : ~<https://melati.netlify.app/>~
 
 ~[![Netlify Status](https://api.netlify.com/api/v1/badges/0e027cb5-33c2-40a7-9c4e-ff694e4ce831/deploy-status)](https://app.netlify.com/sites/melati/deploys)~
 
@@ -12,4 +12,4 @@ Status CI
 
 ---
 
-Berjalan di : <https://fadzikr.github.io/melati/dist/index.html>
+Berjalan di : <https://fadzikri.github.io/melati/dist/index.html>
