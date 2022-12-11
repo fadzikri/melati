@@ -1,7 +1,7 @@
 name: Continuous Integration
  
 on:
-  pull_request:
+  push:
     branches:
       - main
  
@@ -21,3 +21,4 @@ jobs:
       - name: Uji coba unit testing
         run: |
           npm run test
+          npm run build
